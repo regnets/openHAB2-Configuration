@@ -1,0 +1,145 @@
+/* Prefixes:
+ * H = House
+ * R = Room
+ * C = Cluster
+ * S = Single
+ *
+ * Room Abbreviations:
+ * LR = Living Room
+ * BR = Bedroom
+ * HW = Hallway
+ * GR = Guestroom
+ *
+ * Postfixes:
+ * S = Switch
+ * D = Dimmer
+ * T = Temperature
+ * C = Color
+ *
+ * itemtype itemname ["labeltext"] [<iconname>] [(group1, group2, ...)] [{bindingconfig}]
+ */
+
+
+/*
+ * House Groups
+ */
+Group H_Lamps_S "All Lamps" <hue>
+Group H_Lamps_D "All Lamps Dimmer" <hue>
+Group H_Lamps_T "All Lamps Color Temperature" <hue>
+Group H_Lamps_C "All Lamps Color" <hue>
+
+Group H_Signal_S "All Signal" <hue>
+Group H_Signal_D "All Signal Dimmer" <hue>
+Group H_Signal_C "All Signal Color" <hue> 
+
+
+
+/*
+ * Room Groups
+ * Every Room needs a Group to Turn Off all Lamps at Once - Even ih there is only one Light!
+ */
+Group R_LR_S "Livingroom Lamps" <hue> (H_Lamps_S)
+Group R_LR_D "Livingroom Dimmer" <hue> (H_Lamps_D)
+Group R_LR_T "Livingroom Temperature" <hue> (H_Lamps_T)
+Group R_LR_C "Livingroom Color" <hue> (H_Lamps_C)
+
+Group R_BR_S "Bedroom Lamps" <hue> (H_Lamps_S)
+Group R_BR_D "Bedroom Dimmer" <hue> (H_Lamps_D)
+Group R_BR_T "Bedroom Temperature" <hue> (H_Lamps_T)
+Group R_BR_C "Bedroom Color" <hue> (H_Lamps_C)
+
+Group R_HW_S "Hallway Lamps" <hue> (H_Lamps_S)
+Group R_HW_D "Hallway Dimmer" <hue> (H_Lamps_D)
+Group R_HW_T "Hallway Temperature" <hue> (H_Lamps_T)
+Group R_HW_C "Hallway Color" <hue> (H_Lamps_C)
+
+Group R_GR_S "Guestroom Lamps" <hue> (H_Lamps_S)
+Group R_GR_D "Guestroom Dimmer" <hue> (H_Lamps_D)
+Group R_GR_T "Guestroom Temperature" <hue> (H_Lamps_T)
+Group R_GR_C "Guestroom Color" <hue> (H_Lamps_C)
+
+
+/*
+ * Cluster Groups
+ * We only need Cluster Groups, where we got two or more Lights which should work as one Light!
+ * Single Lamps can be directly added to the Room!
+ */
+Group C_LR_DiningTable_S "Dining Table" <hue> (R_LR_S)
+Group C_LR_DiningTable_D "Dining Table Dimmer" <hue> (R_LR_D)
+
+Group C_LR_Couch_S "Couch" <hue> (R_LR_S)
+Group C_LR_Couch_D "Couch Dimmer" <hue> (R_LR_D)
+Group C_LR_Couch_T "Couch Temperature" <hue> (R_LR_T)
+Group C_LR_Couch_C "Couch Color" <hue> (R_LR_C)
+
+Group C_LR_Books_S "Books" <hue> (R_LR_S)
+Group C_LR_Books_D "Books Dimmer" <hue> (R_LR_D)
+Group C_LR_Books_T "Books Temperature" <hue> (R_LR_T)
+Group C_LR_Books_C "Books Color" <hue> (R_LR_C)
+
+Group C_BR_Bed_S "Bed" <hue> (R_BR_S)
+Group C_BR_Bed_D "Bed Dimmer" <hue> (R_BR_D)
+Group C_BR_Bed_C "Bed Color" <hue> (R_BR_C)
+
+Group C_GR_Bed_S "Bed" <hue> (R_GR_S)
+Group C_GR_Bed_D "Bed Dimmer" <hue> (R_GR_D)
+Group C_GR_Bed_T "Bed Temperature" <hue> (R_GR_T)
+
+
+/*
+ * Single Lamps! Finally!
+ */
+Switch S_Signal1_S "Signal Livingroom" <hue> (H_Signal_S) {hue:}
+Switch S_Signal2_S "Signal Hallway" <hue> (H_Signal_S) {hue:}
+Dimmer S_Signal1_D "Signal Livingroom Dimmer" <hue> (H_Signal_D) {hue:}
+Dimmer S_Signal2_D "Signal Hallway Dimmer" <hue> (H_Signal_D) {hue:}
+Color  S_Signal1_C "Signal Livingroom Color" <hue> (H_Signal_C) {hue:}
+Color  S_Signal2_C "Signal Hallway Color" <hue> (H_Signal_C) {hue:}
+ 
+Switch S_LR_DiningTable1_S "Dining Table 1" <hue> (C_LR_DiningTable_S) {hue:}
+Switch S_LR_DiningTable2_S "Dining Table 2" <hue> (C_LR_DiningTable_S) {hue:}
+Dimmer S_LR_DiningTable1_D "Dining Table 1 Dimmer" <hue> (C_LR_DiningTable_D)
+Dimmer S_LR_DiningTable2_D "Dining Table 2 Dimmer" <hue> (C_LR_DiningTable_D)
+
+Switch S_LR_Couch1_S "Couch 1" <hue> (C_LR_Couch_S) {hue:}
+Switch S_LR_Couch2_S "Couch 2" <hue> (C_LR_Couch_S) {hue:}
+Switch S_LR_Couch3_S "Couch 3" <hue> (C_LR_Couch_S) {hue:}
+Dimmer S_LR_Couch1_D "Couch 1 Dimmer" <hue> (C_LR_Couch_D) {hue:}
+Dimmer S_LR_Couch2_D "Couch 2 Dimmer" <hue> (C_LR_Couch_D) {hue:}
+Dimmer S_LR_Couch3_D "Couch 3 Dimmer" <hue> (C_LR_Couch_D) {hue:}
+Dimmer S_LR_Couch1_T "Couch 1 Temperature" <hue> (C_LR_Couch_T) {hue:}
+Dimmer S_LR_Couch2_T "Couch 2 Temperature" <hue> (C_LR_Couch_T) {hue:}
+Dimmer S_LR_Couch3_T "Couch 3 Temperature" <hue> (C_LR_Couch_T) {hue:}
+Color  S_LR_Couch1_C "Couch 1 Color" <hue> (C_LR_Couch_C) {hue:}
+Color  S_LR_Couch2_C "Couch 2 Color" <hue> (C_LR_Couch_C) {hue:}
+Color  S_LR_Couch3_C "Couch 3 Color" <hue> (C_LR_Couch_C) {hue:}
+
+Switch S_LR_Books1_S "Books 1" <hue> (C_LR_Books_S) {hue:}
+Switch S_LR_Books2_S "Books 2" <hue> (C_LR_Books_S) {hue:}
+Dimmer S_LR_Books1_D "Books 1 Dimmer" <hue> (C_LR_Books_D) {hue:}
+Dimmer S_LR_Books2_D "Books 2 Dimmer" <hue> (C_LR_Books_D) {hue:}
+Dimmer S_LR_Books1_T "Books 1 Temperature" <hue> (C_LR_Books_T) {hue:}
+Dimmer S_LR_Books2_T "Books 2 Temperature" <hue> (C_LR_Books_T) {hue:}
+Color  S_LR_Books1_C "Books 1 Color" <hue> (C_LR_Books_C) {hue:}
+Color  S_LR_Books2_C "Books 2 Color" <hue> (C_LR_Books_C) {hue:}
+
+Switch S_BR_Bed1_S "Bed 1" <hue> (C_BR_Bed_S)
+Switch S_BR_Bed2_S "Bed 2" <hue> (C_BR_Bed_S)
+Dimmer S_BR_Bed1_D "Bed 1 Dimmer" <hue> (C_BR_Bed_D)
+Dimmer S_BR_Bed2_D "Bed 2 Dimmer" <hue> (C_BR_Bed_D)
+Color  S_BR_Bed1_C "Bed 1 Color" <hue> (C_BR_Bed_C)
+Color  S_BR_Bed2_C "Bed 2 Color" <hue> (C_BR_Bed_C)
+
+Switch S_GR_Bed1_S "Bed 1" <hue> (C_GR_Bed_S) {hue:}
+Switch S_GR_Bed2_S "Bed 2" <hue> (C_GR_Bed_S) {hue:}
+Dimmer S_GR_Bed1_D "Bed 1 Dimmer" <hue> (C_GR_Bed_D) {hue:}
+Dimmer S_GR_Bed2_D "Bed 2 Dimmer" <hue> (C_GR_Bed_D) {hue:}
+Dimmer S_GR_Bed1_T "Bed 1 Temperature" <hue> (C_GR_Bed_T) {hue:}
+Dimmer S_GR_Bed2_T "Bed 2 Temperature" <hue> (C_GR_Bed_T) {hue:}
+
+Switch S_GR_Ceiling_S "Ceiling" <hue> (R_GR_S) {hue:}
+Dimmer S_GR_Ceiling_D "Ceiling Dimmer" <hue> (R_GR_D) {hue:}
+
+Switch S_HW_Shelf_S "Shelf" <hue> (R_HW_S) {hue:}
+Dimmer S_HW_Shelf_D "Shelf Dimmer" <hue> (R_HW_D) {hue:}
+Dimmer S_HW_Shelf_T "Shelf Temperature" <hue> (R_HW_D) {hue:}
