@@ -1,0 +1,8 @@
+Group:Switch:Or G_PresenceAll_S
+
+Group:Switch:Or G_PresenceAndreas_S
+Group:Switch:Or G_PresenceStefanie_S
+Switch G_PresenceSomeone_S
+
+
+Switch presenceGeofenceAndreas "Geofence"
