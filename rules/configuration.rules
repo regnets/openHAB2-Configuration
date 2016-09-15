@@ -1,0 +1,8 @@
+rule "Update Configuration"
+when
+    updateGit changed from OFF to ON
+then
+	executeCommandLine("cd /etc/openhab2 && git pull https://github.com/regnets/openHAB2-Configuration master && chmod -R 777 /etc/openhab2")
+	updateGit.sendCommand(OFF)
+end
+
