@@ -1,0 +1,5 @@
+sitemap default label="Main Menu" {
+    Frame  {
+        Switch item=Hue_lamp2
+    }
+}
