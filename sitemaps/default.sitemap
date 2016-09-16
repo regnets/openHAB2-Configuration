@@ -1,23 +1,26 @@
 sitemap default label="Main Menu" {
     Frame {
-        Text label="Presence" icon="parents_3_2" {
-            Frame {
-                Switch item=G_PresenceAll_S
-            }
-            Frame {
-                Switch item=G_PresenceAndreas_S
-                Switch item=G_PresenceStefanie_S
-                Switch item=G_PresenceSomeone_S
-            }
-            Frame {
-                Switch item=S_PresenceGeoAndreas_S
-                Switch item=S_PresenceMobileAndreas_S
-                Switch item=S_PresenceGeoStefanie_S
-                Switch item=S_PresenceMobileStefanie_S
-            }
-        }
+        Switch item=H_Lamps_S mappings=[ON="On",OFF="Off"]
+    }
+    Frame {
         Text label="System" {
             Frame {
+                Text label="Presence" icon="parents_3_2" {
+                    Frame {
+                        Switch item=G_PresenceAll_S
+                    }
+                    Frame {
+                        Switch item=G_PresenceAndreas_S
+                        Switch item=G_PresenceStefanie_S
+                        Switch item=G_PresenceSomeone_S
+                    }
+                    Frame {
+                        Switch item=S_PresenceGeoAndreas_S
+                        Switch item=S_PresenceMobileAndreas_S
+                        Switch item=S_PresenceGeoStefanie_S
+                        Switch item=S_PresenceMobileStefanie_S
+                    }
+                }
                 Switch item=S_updateConfiguration_S mappings=[ON="Start"]
             }
         }
