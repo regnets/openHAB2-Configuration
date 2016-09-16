@@ -40,9 +40,9 @@ Group H_Signal_C "All Signal Color" <colorlight>
  */
 Number R_LR_Scene "Scenes"
 Group:Switch:OR(ON, OFF) R_LR_S "Livingroom Lamps" <light> (H_Lamps_S)
-Group R_LR_D "Livingroom Dimmer" <dimmablelight> (H_Lamps_D)
-Group R_LR_T "Livingroom Temperature" <colorlight> (H_Lamps_T)
-Group R_LR_C "Livingroom Color" <colorlight> (H_Lamps_C)
+Group:Dimmer:AVG R_LR_D "Livingroom Dimmer" <dimmablelight> (H_Lamps_D)
+Group:Dimmer:AVG R_LR_T "Livingroom Temperature" <colorlight> (H_Lamps_T)
+Group:Color:AVG R_LR_C "Livingroom Color" <colorlight> (H_Lamps_C)
 
 Number R_BR_Scene "Scenes"
 Group R_BR_S "Bedroom Lamps" <light> (H_Lamps_S)
@@ -72,9 +72,9 @@ Group:Switch:AND(ON, OFF) C_LR_DiningTable_S "Dining Table" <light> (R_LR_S)
 Group:Slider:AND(ON, OFF) C_LR_DiningTable_D "Dining Table Dimmer" <dimmablelight> (R_LR_D)
 
 Group:Switch:AND(ON, OFF) C_LR_Couch_S "Couch" <light> (R_LR_S)
-Group C_LR_Couch_D "Couch Dimmer" <dimmablelight> (R_LR_D)
-Group C_LR_Couch_T "Couch Temperature" <colorlight> (R_LR_T)
-Group C_LR_Couch_C "Couch Color" <colorlight> (R_LR_C)
+Group:Dimmer:AVG C_LR_Couch_D "Couch Dimmer" <dimmablelight> (R_LR_D)
+Group:Dimmer:AVG C_LR_Couch_T "Couch Temperature" <colorlight> (R_LR_T)
+Group:Color:AVG C_LR_Couch_C "Couch Color" <colorlight> (R_LR_C)
 
 Group C_LR_Books_S "Books" <light> (R_LR_S)
 Group C_LR_Books_D "Books Dimmer" <dimmablelight> (R_LR_D)
