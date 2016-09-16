@@ -1,5 +1,5 @@
 sitemap default label="Main Menu" {
-    Text label="Presence" {
+    Frame label="Presence" {
         Frame {
             Switch Item=G_PresenceAll_S
         }
