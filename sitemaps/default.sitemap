@@ -6,7 +6,7 @@ sitemap default label="Main Menu" {
         Text label="Livingroom" icon="sofa" {
             Frame {
                 Switch item=R_LR_S mappings=[ON="On",OFF="Off"]
-                Switch item=R_LR_Scene label="Scenes" mappings=[1="Bright", 2="TV", 3="Eating", 4="Cozy"]
+                //Switch item=R_LR_Scene label="Scenes" mappings=[1="Bright", 2="TV", 3="Eating", 4="Cozy"]
             }
             Frame {
                 Switch item=C_LR_Couch_S
