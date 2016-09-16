@@ -3,20 +3,7 @@ when
     Item S_updateConfiguration_S received command ON
 then
     logDebug("Update Configuration", "Vorher")
-    //executeCommandLine("/etc/openhab2/scripts/update.sh")
-    sendCommand(S_updateConfiguration_S, OFF)
-    logDebug("Update Configuration", "Vorher")
-end
-
-
-
-rule "Test"
-when
-    Item test received command ON
-then
-    logDebug("Test", "Vorher")
-    //executeCommandLine("/etc/openhab2/scripts/update.sh")
-    sendCommand(test, OFF)
-    test.sendCommand(OFF)
-    logDebug("Test", "Vorher")
+    executeCommandLine("/etc/openhab2/scripts/update.sh")
+    S_updateConfiguration_S.sendCommand(OFF)
+    logDebug("Update Configuration", "Nachher")
 end
