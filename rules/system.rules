@@ -8,3 +8,15 @@ then
     logDebug("Update Configuration", "Vorher")
 end
 
+
+
+rule "Test"
+when
+    Item test received command ON
+then
+    logDebug("Test", "Vorher")
+    //executeCommandLine("/etc/openhab2/scripts/update.sh")
+    sendCommand(test, OFF)
+    test.sendCommand(OFF)
+    logDebug("Test", "Vorher")
+end
