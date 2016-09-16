@@ -19,6 +19,7 @@ sitemap default label="Main Menu" {
         Text label="System 2" {
             Frame {
                 Switch item=S_updateConfiguration_S
+                Switch item=test
             }
         }
     }
