@@ -1,6 +1,6 @@
 sitemap default label="Main Menu" {
     Frame {
-        Text label="Presence" icon="contact" {
+        Text label="Presence" icon="parents_3_2" {
             Frame {
                 Switch item=G_PresenceAll_S
             }
