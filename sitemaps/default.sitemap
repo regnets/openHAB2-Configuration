@@ -1,7 +1,7 @@
 sitemap default label="Main Menu" {
     Frame {
         Switch item=H_Lamps_S mappings=[ON="On",OFF="Off"]
-        Text label="Livingroom" {
+        Text label="Livingroom" icon="sofa" {
             Frame {
                 Switch item=R_LR_S mappings=[ON="On",OFF="Off"]
             }
@@ -11,7 +11,7 @@ sitemap default label="Main Menu" {
                 Switch item=C_LR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
             }
         }
-        Text label="Bedroom" {
+        Text label="Bedroom" icon="bedroom_blue" {
             Frame {
                 Switch item=R_BR_S mappings=[ON="On",OFF="Off"]
             }
@@ -21,7 +21,7 @@ sitemap default label="Main Menu" {
                 Switch item=C_LR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
             }
         }
-        Text label="Guestroom" {
+        Text label="Guestroom" icon="bedroom_red" {
             Frame {
                 Switch item=R_GR_S mappings=[ON="On",OFF="Off"]
             }
@@ -31,7 +31,7 @@ sitemap default label="Main Menu" {
                 Switch item=C_LR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
             }
         }
-        Text label="Hallway" {
+        Text label="Hallway" icon="corridor" {
             Frame {
                 Switch item=R_HW_S mappings=[ON="On",OFF="Off"]
             }
@@ -43,7 +43,7 @@ sitemap default label="Main Menu" {
         }
     }
     Frame {
-        Text label="System" {
+        Text label="System" icon="incline" {
             Frame {
                 Text label="Presence" icon="parents_3_2" {
                     Frame {
@@ -61,7 +61,7 @@ sitemap default label="Main Menu" {
                         Switch item=S_PresenceMobileStefanie_S
                     }
                 }
-                Switch item=S_updateConfiguration_S mappings=[ON="Start"]
+                Switch item=S_updateConfiguration_S icon="incline" mappings=[ON="Start"]
             }
         }
     }
