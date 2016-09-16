@@ -1,6 +1,46 @@
 sitemap default label="Main Menu" {
     Frame {
         Switch item=H_Lamps_S mappings=[ON="On",OFF="Off"]
+        Text label="Livingroom" {
+            Frame {
+                Switch item=R_LR_S mappings=[ON="On",OFF="Off"]
+            }
+            Frame {
+                Switch item=C_LR_Couch_S
+                Switch item=C_LR_Couch_D label="" visibility=[C_LR_Couch_S==ON]
+                Switch item=C_LR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
+            }
+        }
+        Text label="Bedroom" {
+            Frame {
+                Switch item=R_BR_S mappings=[ON="On",OFF="Off"]
+            }
+            Frame {
+                Switch item=C_LR_Couch_S
+                Switch item=C_LR_Couch_D label="" visibility=[C_LR_Couch_S==ON]
+                Switch item=C_LR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
+            }
+        }
+        Text label="Guestroom" {
+            Frame {
+                Switch item=R_GR_S mappings=[ON="On",OFF="Off"]
+            }
+            Frame {
+                Switch item=C_LR_Couch_S
+                Switch item=C_LR_Couch_D label="" visibility=[C_LR_Couch_S==ON]
+                Switch item=C_LR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
+            }
+        }
+        Text label="Hallway" {
+            Frame {
+                Switch item=R_HW_S mappings=[ON="On",OFF="Off"]
+            }
+            Frame {
+                Switch item=C_LR_Couch_S
+                Switch item=C_LR_Couch_D label="" visibility=[C_LR_Couch_S==ON]
+                Switch item=C_LR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
+            }
+        }
     }
     Frame {
         Text label="System" {
