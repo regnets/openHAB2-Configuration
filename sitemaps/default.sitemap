@@ -16,7 +16,7 @@ sitemap default label="Main Menu" {
                 Switch item=S_PresenceMobileStefanie_S
             }
         }
-        Text label="System" {
+        Text label="System 2" {
             Frame {
                 Switch item=S_updateConfiguration_S
             }
