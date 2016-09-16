@@ -1,1 +1,2 @@
 Switch S_updateConfiguration_S "Update Configuration"
+Switch test "Test"
