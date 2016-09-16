@@ -68,8 +68,8 @@ Group R_GR_C "Guestroom Color" <colorlight> (H_Lamps_C)
  * We only need Cluster Groups, where we got two or more Lights which should work as one Light!
  * Single Lamps can be directly added to the Room!
  */
-Group C_LR_DiningTable_S "Dining Table" <light> (R_LR_S)
-Group C_LR_DiningTable_D "Dining Table Dimmer" <dimmablelight> (R_LR_D)
+Group:Switch:AND(ON, OFF) C_LR_DiningTable_S "Dining Table" <light> (R_LR_S)
+Group:Slider:AND(ON, OFF) C_LR_DiningTable_D "Dining Table Dimmer" <dimmablelight> (R_LR_D)
 
 Group C_LR_Couch_S "Couch" <light> (R_LR_S)
 Group C_LR_Couch_D "Couch Dimmer" <dimmablelight> (R_LR_D)
@@ -141,9 +141,9 @@ Dimmer S_GR_Bed2_D "Bed 2 Dimmer" (C_GR_Bed_D) {hue:}
 Dimmer S_GR_Bed1_T "Bed 1 Temperature" (C_GR_Bed_T) {hue:}
 Dimmer S_GR_Bed2_T "Bed 2 Temperature" (C_GR_Bed_T) {hue:}
 
-Switch S_GR_Ceiling_S "Ceiling" (R_GR_S) {hue:}
-Dimmer S_GR_Ceiling_D "Ceiling Dimmer" (R_GR_D) {hue:}
+Switch S_GR_Ceiling_S "Ceiling" <light> (R_GR_S) {hue:}
+Dimmer S_GR_Ceiling_D "Ceiling Dimmer" <dimmablelight> (R_GR_D) {hue:}
 
-Switch S_HW_Shelf_S "Shelf" (R_HW_S) {hue:}
-Dimmer S_HW_Shelf_D "Shelf Dimmer" (R_HW_D) {hue:}
+Switch S_HW_Shelf_S "Shelf" <light> (R_HW_S) {hue:}
+Dimmer S_HW_Shelf_D "Shelf Dimmer" <dimmablelight> (R_HW_D) {hue:}
 Dimmer S_HW_Shelf_T "Shelf Temperature" (R_HW_D) {hue:}
