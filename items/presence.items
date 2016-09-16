@@ -4,5 +4,7 @@ Group:Switch:Or G_PresenceAndreas_S
 Group:Switch:Or G_PresenceStefanie_S
 Switch G_PresenceSomeone_S
 
-
-Switch presenceGeofenceAndreas "Geofence"
+Switch S_PresenceGeoAndreas_S "Geofence" (G_PresenceAndreas_S)
+Switch S_PresenceMobileAndreas_S "Mobile" (G_PresenceAndreas_S)
+Switch S_PresenceGeoStefanie_S "Geofence" (G_PresenceStefanie_S)
+Switch S_PresenceMobileStefanie_S "Mobile" (G_PresenceStefanie_S)
