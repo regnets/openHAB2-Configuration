@@ -1,8 +1,8 @@
 rule "Update Configuration"
 when
-	S_updateConfiguration_S changed to ON
+	S_updateConfiguration_S changed from OFF to ON
 then
 	//executeCommandLine("/etc/openhab2/scripts/update.sh")
-	S_updateConfiguration_S.sendCommand(OFF)
+	S_updateConfiguration_S.postUpdate(OFF)
 end
 
