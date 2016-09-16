@@ -28,8 +28,8 @@ sitemap default label="Main Menu" {
             }
             Frame {
                 Switch item=C_BR_Bed_S
-                Slider item=C_BR_Bed_D label="  Dimmer" visibility=[C_LR_Couch_S==ON]
-                Switch item=C_BR_Bed_C label="  Color" visibility=[C_LR_Couch_S==ON]
+                Slider item=C_BR_Bed_D label="  Dimmer" visibility=[C_BR_Bed_S==ON]
+                Switch item=C_BR_Bed_C label="  Color" visibility=[C_BR_Bed_S==ON]
             }
         }
         Text label="Guestroom" icon="bedroom_red" {
@@ -38,9 +38,12 @@ sitemap default label="Main Menu" {
                 Switch item=R_GR_Scene label="Scenes" mappings=[1="Bright", 2="Reading", 3="Cozy"]
             }
             Frame {
-                Switch item=C_GR_Couch_S
-                Switch item=C_GR_Couch_D label="" visibility=[C_LR_Couch_S==ON]
-                Switch item=C_GR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
+                Switch item=C_GR_Bed_S
+                Switch item=C_GR_Bed_D label="  Dimmer" visibility=[C_GR_Bed_S==ON]
+                Switch item=C_GR_Bed_T label="  Color" visibility=[C_GR_Bed_S==ON]
+                
+                Switch item=S_GR_Ceiling_S
+                Switch item=S_GR_Ceiling_D label=" Dimmer" visibility=[S_GR_Ceiling_S==ON]
             }
         }
         Text label="Hallway" icon="corridor" {
@@ -48,9 +51,9 @@ sitemap default label="Main Menu" {
                 Switch item=R_HW_S mappings=[ON="On",OFF="Off"]
             }
             Frame {
-                Switch item=C_LR_Couch_S
-                Switch item=C_LR_Couch_D label="" visibility=[C_LR_Couch_S==ON]
-                Switch item=C_LR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
+                Switch item=S_HW_Shelf_S
+                Switch item=S_HW_Shelf_D label="  Dimmer" visibility=[S_HW_Shelf_S==ON]
+                Switch item=S_HW_Shelf_T label="  Color" visibility=[S_HW_Shelf_S==ON]
             }
         }
     }
