@@ -6,31 +6,41 @@ sitemap default label="Main Menu" {
         Text label="Livingroom" icon="sofa" {
             Frame {
                 Switch item=R_LR_S mappings=[ON="On",OFF="Off"]
+                Switch item=R_LR_Scene label="Scenes" mappings=[1="Bright", 2="TV", 3="Eating", 4="Cozy"]
             }
             Frame {
                 Switch item=C_LR_Couch_S
-                Switch item=C_LR_Couch_D label="" visibility=[C_LR_Couch_S==ON]
-                Switch item=C_LR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
+                Switch item=C_LR_Couch_D label="  Dimmer" visibility=[C_LR_Couch_S==ON]
+                Switch item=C_LR_Couch_T label="  Color" visibility=[C_LR_Couch_S==ON]
+                
+                Switch item=C_LR_Books_S
+                Switch item=C_LR_Books_D label="  Dimmer" visibility=[C_LR_Books_S==ON]
+                Switch item=C_LR_Books_T label="  Color" visibility=[C_LR_Books_S==ON]
+                
+                Switch item=C_LR_DiningTable_S 
+                Switch item=C_LR_DiningTable_D label="  Dimmer" visibility=[C_LR_DiningTable_S==ON]
             }
         }
         Text label="Bedroom" icon="bedroom_blue" {
             Frame {
                 Switch item=R_BR_S mappings=[ON="On",OFF="Off"]
+                Switch item=R_BR_Scene label="Scenes" mappings=[1="Bright", 2="Reading", 3="Cozy"]
             }
             Frame {
-                Switch item=C_LR_Couch_S
-                Switch item=C_LR_Couch_D label="" visibility=[C_LR_Couch_S==ON]
-                Switch item=C_LR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
+                Switch item=C_BR_Bed_S
+                Slider item=C_BR_Bed_D label="  Dimmer" visibility=[C_LR_Couch_S==ON]
+                Switch item=C_BR_Bed_C label="  Color" visibility=[C_LR_Couch_S==ON]
             }
         }
         Text label="Guestroom" icon="bedroom_red" {
             Frame {
                 Switch item=R_GR_S mappings=[ON="On",OFF="Off"]
+                Switch item=R_GR_Scene label="Scenes" mappings=[1="Bright", 2="Reading", 3="Cozy"]
             }
             Frame {
-                Switch item=C_LR_Couch_S
-                Switch item=C_LR_Couch_D label="" visibility=[C_LR_Couch_S==ON]
-                Switch item=C_LR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
+                Switch item=C_GR_Couch_S
+                Switch item=C_GR_Couch_D label="" visibility=[C_LR_Couch_S==ON]
+                Switch item=C_GR_Couch_T label="" visibility=[C_LR_Couch_S==ON]
             }
         }
         Text label="Hallway" icon="corridor" {
