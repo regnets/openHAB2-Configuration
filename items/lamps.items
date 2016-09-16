@@ -24,13 +24,13 @@
  * House Groups
  */
 Group:Switch:OR(ON, OFF) H_Lamps_S "All Lamps" <light>
-Group H_Lamps_D "All Lamps Dimmer" <dimmablelight>
-Group H_Lamps_T "All Lamps Color Temperature" <colorlight>
-Group H_Lamps_C "All Lamps Color" <colorlight>
+Group:Dimmer:AVG H_Lamps_D "All Lamps Dimmer" <dimmablelight>
+Group:Dimmer:AVG H_Lamps_T "All Lamps Color Temperature" <colorlight>
+Group:Color:AVG H_Lamps_C "All Lamps Color" <colorlight>
 
-Group H_Signal_S "All Signal" <light> 
-Group H_Signal_D "All Signal Dimmer" <dimmablelight>
-Group H_Signal_C "All Signal Color" <colorlight>
+Group:Switch:OR(ON, OFF) H_Signal_S "All Signal" <light> 
+Group:Dimmer:AVG H_Signal_D "All Signal Dimmer" <dimmablelight>
+Group:Color:AVG H_Signal_C "All Signal Color" <colorlight>
 
 
 
@@ -45,22 +45,22 @@ Group:Dimmer:AVG R_LR_T "Livingroom Temperature" <colorlight> (H_Lamps_T)
 Group:Color:AVG R_LR_C "Livingroom Color" <colorlight> (H_Lamps_C)
 
 Number R_BR_Scene "Scenes"
-Group R_BR_S "Bedroom Lamps" <light> (H_Lamps_S)
-Group R_BR_D "Bedroom Dimmer" <dimmablelight> (H_Lamps_D)
-Group R_BR_T "Bedroom Temperature" <colorlight> (H_Lamps_T)
-Group R_BR_C "Bedroom Color" <colorlight> (H_Lamps_C)
+Group:Switch:OR(ON, OFF) R_BR_S "Bedroom Lamps" <light> (H_Lamps_S)
+Group:Dimmer:AVG R_BR_D "Bedroom Dimmer" <dimmablelight> (H_Lamps_D)
+Group:Dimmer:AVG R_BR_T "Bedroom Temperature" <colorlight> (H_Lamps_T)
+Group:Color:AVG R_BR_C "Bedroom Color" <colorlight> (H_Lamps_C)
 
 Number R_HW_Scene "Scenes"
-Group R_HW_S "Hallway Lamps" <light> (H_Lamps_S)
-Group R_HW_D "Hallway Dimmer" <dimmablelight> (H_Lamps_D)
-Group R_HW_T "Hallway Temperature" <colorlight> (H_Lamps_T)
-Group R_HW_C "Hallway Color" <colorlight> (H_Lamps_C)
+Group:Switch:OR(ON, OFF) R_HW_S "Hallway Lamps" <light> (H_Lamps_S)
+Group:Dimmer:AVG R_HW_D "Hallway Dimmer" <dimmablelight> (H_Lamps_D)
+Group:Dimmer:AVG R_HW_T "Hallway Temperature" <colorlight> (H_Lamps_T)
+Group:Color:AVG R_HW_C "Hallway Color" <colorlight> (H_Lamps_C)
 
 Number R_GR_Scene "Scenes"
-Group R_GR_S "Guestroom Lamps" <light> (H_Lamps_S)
-Group R_GR_D "Guestroom Dimmer" <dimmablelight> (H_Lamps_D)
-Group R_GR_T "Guestroom Temperature" <colorlight> (H_Lamps_T)
-Group R_GR_C "Guestroom Color" <colorlight> (H_Lamps_C)
+Group:Switch:OR(ON, OFF) R_GR_S "Guestroom Lamps" <light> (H_Lamps_S)
+Group:Dimmer:AVG R_GR_D "Guestroom Dimmer" <dimmablelight> (H_Lamps_D)
+Group:Dimmer:AVG R_GR_T "Guestroom Temperature" <colorlight> (H_Lamps_T)
+Group:Color:AVG R_GR_C "Guestroom Color" <colorlight> (H_Lamps_C)
 
 
 /*
@@ -76,18 +76,18 @@ Group:Dimmer:AVG C_LR_Couch_D "Couch Dimmer" <dimmablelight> (R_LR_D)
 Group:Dimmer:AVG C_LR_Couch_T "Couch Temperature" <colorlight> (R_LR_T)
 Group:Color:AVG C_LR_Couch_C "Couch Color" <colorlight> (R_LR_C)
 
-Group C_LR_Books_S "Books" <light> (R_LR_S)
-Group C_LR_Books_D "Books Dimmer" <dimmablelight> (R_LR_D)
-Group C_LR_Books_T "Books Temperature" <colorlight> (R_LR_T)
-Group C_LR_Books_C "Books Color" <colorlight> (R_LR_C)
+Group:Switch:AND(ON, OFF) C_LR_Books_S "Books" <light> (R_LR_S)
+Group:Dimmer:AVG C_LR_Books_D "Books Dimmer" <dimmablelight> (R_LR_D)
+Group:Dimmer:AVG C_LR_Books_T "Books Temperature" <colorlight> (R_LR_T)
+Group:Color:AVG C_LR_Books_C "Books Color" <colorlight> (R_LR_C)
 
-Group C_BR_Bed_S "Bed" <light> (R_BR_S)
-Group C_BR_Bed_D "Bed Dimmer" <dimmablelight> (R_BR_D)
-Group C_BR_Bed_C "Bed Color" <colorlight>(R_BR_C)
+Group:Switch:AND(ON, OFF C_BR_Bed_S "Bed" <light> (R_BR_S)
+Group:Dimmer:AVG C_BR_Bed_D "Bed Dimmer" <dimmablelight> (R_BR_D)
+Groupp:Color:AVG C_BR_Bed_C "Bed Color" <colorlight>(R_BR_C)
 
-Group C_GR_Bed_S "Bed" <light> (R_GR_S)
-Group C_GR_Bed_D "Bed Dimmer" <dimmablelight> (R_GR_D)
-Group C_GR_Bed_T "Bed Temperature" <colorlight> (R_GR_T)
+Group:Switch:AND(ON, OFF C_GR_Bed_S "Bed" <light> (R_GR_S)
+Group:Dimmer:AVG C_GR_Bed_D "Bed Dimmer" <dimmablelight> (R_GR_D)
+Group:Dimmer:AVG C_GR_Bed_T "Bed Temperature" <colorlight> (R_GR_T)
 
 
 /*
