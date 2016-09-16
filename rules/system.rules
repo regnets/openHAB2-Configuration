@@ -1,6 +1,6 @@
 rule "Update Configuration"
 when
-    Item S_updateConfiguration_S received command On
+    Item S_updateConfiguration_S received command ON
 then
     logDebug("Update Configuration", "Vorher")
     //executeCommandLine("/etc/openhab2/scripts/update.sh")
