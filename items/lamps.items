@@ -39,7 +39,7 @@ Group H_Signal_C "All Signal Color" <colorlight>
  * Every Room needs a Group to Turn Off all Lamps at Once - Even ih there is only one Light!
  */
 Number R_LR_Scene "Scenes"
-Group R_LR_S "Livingroom Lamps" <light> (H_Lamps_S)
+Group:Switch:OR(ON, OFF) R_LR_S "Livingroom Lamps" <light> (H_Lamps_S)
 Group R_LR_D "Livingroom Dimmer" <dimmablelight> (H_Lamps_D)
 Group R_LR_T "Livingroom Temperature" <colorlight> (H_Lamps_T)
 Group R_LR_C "Livingroom Color" <colorlight> (H_Lamps_C)
