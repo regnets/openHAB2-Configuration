@@ -71,7 +71,7 @@ Group R_GR_C "Guestroom Color" <colorlight> (H_Lamps_C)
 Group:Switch:AND(ON, OFF) C_LR_DiningTable_S "Dining Table" <light> (R_LR_S)
 Group:Slider:AND(ON, OFF) C_LR_DiningTable_D "Dining Table Dimmer" <dimmablelight> (R_LR_D)
 
-Group C_LR_Couch_S "Couch" <light> (R_LR_S)
+Group:Switch:AND(ON, OFF) C_LR_Couch_S "Couch" <light> (R_LR_S)
 Group C_LR_Couch_D "Couch Dimmer" <dimmablelight> (R_LR_D)
 Group C_LR_Couch_T "Couch Temperature" <colorlight> (R_LR_T)
 Group C_LR_Couch_C "Couch Color" <colorlight> (R_LR_C)
