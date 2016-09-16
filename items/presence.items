@@ -1,7 +1,7 @@
 Group:Switch:OR(ON,OFF) G_PresenceAll_S "Anyone"
 
 Group:Switch:OR(ON,OFF) G_PresenceAndreas_S "Andreas" (G_PresenceAll_S)
-Group:Switch:OR(ON,OFF) G_PresenceStefanie_S "Stefanie"  G_PresenceAll_S)
+Group:Switch:OR(ON,OFF) G_PresenceStefanie_S "Stefanie" (G_PresenceAll_S)
 Switch G_PresenceSomeone_S "Someone (Override)" (G_PresenceAll_S)
 
 Switch S_PresenceGeoAndreas_S "Geofence Andreas" (G_PresenceAndreas_S)
