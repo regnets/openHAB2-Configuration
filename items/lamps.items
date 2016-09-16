@@ -38,21 +38,25 @@ Group H_Signal_C "All Signal Color" <colorlight>
  * Room Groups
  * Every Room needs a Group to Turn Off all Lamps at Once - Even ih there is only one Light!
  */
+Number R_LR_Scene "Scenes"
 Group R_LR_S "Livingroom Lamps" <light> (H_Lamps_S)
 Group R_LR_D "Livingroom Dimmer" <dimmablelight> (H_Lamps_D)
 Group R_LR_T "Livingroom Temperature" <colorlight> (H_Lamps_T)
 Group R_LR_C "Livingroom Color" <colorlight> (H_Lamps_C)
 
+Number R_BR_Scene "Scenes"
 Group R_BR_S "Bedroom Lamps" <light> (H_Lamps_S)
 Group R_BR_D "Bedroom Dimmer" <dimmablelight> (H_Lamps_D)
 Group R_BR_T "Bedroom Temperature" <colorlight> (H_Lamps_T)
 Group R_BR_C "Bedroom Color" <colorlight> (H_Lamps_C)
 
+Number R_HW_Scene "Scenes"
 Group R_HW_S "Hallway Lamps" <light> (H_Lamps_S)
 Group R_HW_D "Hallway Dimmer" <dimmablelight> (H_Lamps_D)
 Group R_HW_T "Hallway Temperature" <colorlight> (H_Lamps_T)
 Group R_HW_C "Hallway Color" <colorlight> (H_Lamps_C)
 
+Number R_GR_Scene "Scenes"
 Group R_GR_S "Guestroom Lamps" <light> (H_Lamps_S)
 Group R_GR_D "Guestroom Dimmer" <dimmablelight> (H_Lamps_D)
 Group R_GR_T "Guestroom Temperature" <colorlight> (H_Lamps_T)
