@@ -1,6 +1,8 @@
 sitemap default label="Main Menu" {
     Frame {
-        Switch item=H_Lamps_S mappings=[ON="On",OFF="Off"]
+       Switch item=H_Lamps_S mappings=[ON="On",OFF="Off"]
+    }
+    Frame {
         Text label="Livingroom" icon="sofa" {
             Frame {
                 Switch item=R_LR_S mappings=[ON="On",OFF="Off"]
