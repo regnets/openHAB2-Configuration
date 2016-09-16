@@ -1,18 +1,18 @@
 sitemap default label="Main Menu" {
     Frame label="Presence" {
         Frame {
-            Switch Item=G_PresenceAll_S
+            Switch item=G_PresenceAll_S
         }
         Frame {
-            Switch Item=G_PresenceAndreas_S
-            Switch Item=G_PresenceStefanie_S
-            Switch Item=G_PresenceSomeone_S
+            Switch item=G_PresenceAndreas_S
+            Switch item=G_PresenceStefanie_S
+            Switch item=G_PresenceSomeone_S
         }
         Frame {
-            Switch Item=S_PresenceGeoAndreas_S
-            Switch Item=S_PresenceMobileAndreas_S
-            Switch Item=S_PresenceGeoStefanie_S
-            Switch Item=S_PresenceMobileStefanie_S
+            Switch item=S_PresenceGeoAndreas_S
+            Switch item=S_PresenceMobileAndreas_S
+            Switch item=S_PresenceGeoStefanie_S
+            Switch item=S_PresenceMobileStefanie_S
         }
     }
 }
