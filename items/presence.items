@@ -1,10 +1,10 @@
-Group:Switch:OR(ON,OFF) G_PresenceAll_S "Anyone" <contact>
+Group:Switch:OR(ON,OFF) G_PresenceAll_S "Anyone" <parents>
 
-Group:Switch:OR(ON,OFF) G_PresenceAndreas_S "Andreas" <contact> (G_PresenceAll_S)
-Group:Switch:OR(ON,OFF) G_PresenceStefanie_S "Stefanie" <contact> (G_PresenceAll_S)
-Switch G_PresenceSomeone_S "Someone (Override)" <contact> (G_PresenceAll_S)
+Group:Switch:OR(ON,OFF) G_PresenceAndreas_S "Andreas" <parents> (G_PresenceAll_S)
+Group:Switch:OR(ON,OFF) G_PresenceStefanie_S "Stefanie" <parents> (G_PresenceAll_S)
+Switch G_PresenceSomeone_S "Someone (Override)" <parents> (G_PresenceAll_S)
 
-Switch S_PresenceGeoAndreas_S "Geofence Andreas" <contact> (G_PresenceAndreas_S)
-Switch S_PresenceMobileAndreas_S "Mobile Andreas" <contact> (G_PresenceAndreas_S)
-Switch S_PresenceGeoStefanie_S "Geofence Stefanie" <contact> (G_PresenceStefanie_S)
-Switch S_PresenceMobileStefanie_S "Mobile Stefanie" <contact> (G_PresenceStefanie_S)
+Switch S_PresenceGeoAndreas_S "Geofence Andreas" <man_1> (G_PresenceAndreas_S)
+Switch S_PresenceMobileAndreas_S "Mobile Andreas" <man_1> (G_PresenceAndreas_S)
+Switch S_PresenceGeoStefanie_S "Geofence Stefanie" <woman_1> (G_PresenceStefanie_S)
+Switch S_PresenceMobileStefanie_S "Mobile Stefanie" <woman_1> (G_PresenceStefanie_S)
