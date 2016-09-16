@@ -2,8 +2,6 @@ rule "Update Configuration"
 when
     Item S_updateConfiguration_S received command ON
 then
-    logDebug("Update Configuration", "Vorher")
-    executeCommandLine("/etc/openhab2/scripts/update.sh")
     S_updateConfiguration_S.sendCommand(OFF)
-    logDebug("Update Configuration", "Nachher")
+    executeCommandLine("/etc/openhab2/scripts/update.sh")
 end
