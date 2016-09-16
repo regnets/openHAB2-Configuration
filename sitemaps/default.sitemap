@@ -16,5 +16,10 @@ sitemap default label="Main Menu" {
                 Switch item=S_PresenceMobileStefanie_S
             }
         }
+        Text label="System" {
+            Frame {
+                Switch item=S_updateConfiguration_S
+            }
+        }
     }
 }
