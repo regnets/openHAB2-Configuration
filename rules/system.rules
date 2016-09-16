@@ -2,7 +2,7 @@ rule "Update Configuration"
 when
 	Item S_updateConfiguration_S changed from OFF to ON
 then
-	executeCommandLine("/etc/openhab2/scripts/update.sh")
-	S_updateConfiguration_S.sendCommand(OFF)
+	//executeCommandLine("/etc/openhab2/scripts/update.sh")
+	sendCommand(S_updateConfiguration_S, OFF)
 end
 
