@@ -1,10 +1,10 @@
-Group:Switch:Or G_PresenceAll_S
+Group:Switch:Or G_PresenceAll_S "Anyone"
 
-Group:Switch:Or G_PresenceAndreas_S
-Group:Switch:Or G_PresenceStefanie_S
-Switch G_PresenceSomeone_S
+Group:Switch:Or G_PresenceAndreas_S "Andreas"
+Group:Switch:Or G_PresenceStefanie_S "Stefanie"
+Switch G_PresenceSomeone_S "Someone (Override)"
 
-Switch S_PresenceGeoAndreas_S "Geofence" (G_PresenceAndreas_S)
-Switch S_PresenceMobileAndreas_S "Mobile" (G_PresenceAndreas_S)
-Switch S_PresenceGeoStefanie_S "Geofence" (G_PresenceStefanie_S)
-Switch S_PresenceMobileStefanie_S "Mobile" (G_PresenceStefanie_S)
+Switch S_PresenceGeoAndreas_S "Geofence Andreas" (G_PresenceAndreas_S)
+Switch S_PresenceMobileAndreas_S "Mobile Andreas" (G_PresenceAndreas_S)
+Switch S_PresenceGeoStefanie_S "Geofence Stefanie" (G_PresenceStefanie_S)
+Switch S_PresenceMobileStefanie_S "Mobile Stefanie" (G_PresenceStefanie_S)
