@@ -69,7 +69,7 @@ Group:Color:AVG R_GR_C "Guestroom Color" <colorlight> (H_Lamps_C)
  * Single Lamps can be directly added to the Room!
  */
 Group:Switch:AND(ON, OFF) C_LR_DiningTable_S "Dining Table" <light> (R_LR_S)
-Group:Slider:AND(ON, OFF) C_LR_DiningTable_D "Dining Table Dimmer" <dimmablelight> (R_LR_D)
+Group:Dimmer:AND(ON, OFF) C_LR_DiningTable_D "Dining Table Dimmer" <dimmablelight> (R_LR_D)
 
 Group:Switch:AND(ON, OFF) C_LR_Couch_S "Couch" <light> (R_LR_S)
 Group:Dimmer:AVG C_LR_Couch_D "Couch Dimmer" <dimmablelight> (R_LR_D)
