@@ -108,15 +108,15 @@ Dimmer S_LR_DiningTable2_D "Dining Table 2 Dimmer" (C_LR_DiningTable_D)
 Switch S_LR_Couch1_S "Couch 1" (C_LR_Couch_S) { channel="hue:0210:00178827902c:bulb1:brightness" }
 Switch S_LR_Couch2_S "Couch 2" (C_LR_Couch_S) { channel="hue:0210:00178827902c:bulb2:brightness" }
 Switch S_LR_Couch3_S "Couch 3" (C_LR_Couch_S) { channel="hue:0210:00178827902c:bulb3:brightness" }
-Dimmer S_LR_Couch1_D "Couch 1 Dimmer" (C_LR_Couch_D) {hue:}
-Dimmer S_LR_Couch2_D "Couch 2 Dimmer" (C_LR_Couch_D) {hue:}
-Dimmer S_LR_Couch3_D "Couch 3 Dimmer" (C_LR_Couch_D) {hue:}
-Dimmer S_LR_Couch1_T "Couch 1 Temperature" (C_LR_Couch_T) {hue:}
-Dimmer S_LR_Couch2_T "Couch 2 Temperature" (C_LR_Couch_T) {hue:}
-Dimmer S_LR_Couch3_T "Couch 3 Temperature" (C_LR_Couch_T) {hue:}
-Color S_LR_Couch1_C "Couch 1 Color" (C_LR_Couch_C) {hue:}
-Color S_LR_Couch2_C "Couch 2 Color" (C_LR_Couch_C) {hue:}
-Color S_LR_Couch3_C "Couch 3 Color" (C_LR_Couch_C) {hue:}
+Dimmer S_LR_Couch1_D "Couch 1 Dimmer" (C_LR_Couch_D) { channel="hue:0210:00178827902c:bulb1:brightness" }
+Dimmer S_LR_Couch2_D "Couch 2 Dimmer" (C_LR_Couch_D) { channel="hue:0210:00178827902c:bulb2:brightness" }
+Dimmer S_LR_Couch3_D "Couch 3 Dimmer" (C_LR_Couch_D) { channel="hue:0210:00178827902c:bulb3:brightness" }
+Dimmer S_LR_Couch1_T "Couch 1 Temperature" (C_LR_Couch_T) { channel="hue:0210:00178827902c:bulb1:color_temperature" }
+Dimmer S_LR_Couch2_T "Couch 2 Temperature" (C_LR_Couch_T) { channel="hue:0210:00178827902c:bulb2:color_temperature" }
+Dimmer S_LR_Couch3_T "Couch 3 Temperature" (C_LR_Couch_T) { channel="hue:0210:00178827902c:bulb3:color_temperature" }
+Color S_LR_Couch1_C "Couch 1 Color" (C_LR_Couch_C) { channel="hue:0210:00178827902c:bulb1:color" }
+Color S_LR_Couch2_C "Couch 2 Color" (C_LR_Couch_C) { channel="hue:0210:00178827902c:bulb2:color" }
+Color S_LR_Couch3_C "Couch 3 Color" (C_LR_Couch_C) { channel="hue:0210:00178827902c:bulb3:color" }
 
 Switch S_LR_Books1_S "Books 1" (C_LR_Books_S) {hue:}
 Switch S_LR_Books2_S "Books 2" (C_LR_Books_S) {hue:}
