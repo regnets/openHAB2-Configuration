@@ -1,4 +1,4 @@
-Bridge hue:bridge:00178827902c [ ipAddress="10.0.0.87" ] {
+Bridge hue:bridge:00178827902c [ ipAddress="10.0.0.87", userName="sk1BVs2XIOmaptQWOVxCk9jrDRtNlpwNG8IVcdku" ] {
 	0210 bulb1 [ lightId="1" ]
 	0210 bulb2 [ lightId="2" ]
 	0210 bulb3 [ lightId="3" ]
