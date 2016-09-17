@@ -105,9 +105,9 @@ Switch S_LR_DiningTable2_S "Dining Table 2" (C_LR_DiningTable_S) {hue:}
 Dimmer S_LR_DiningTable1_D "Dining Table 1 Dimmer" (C_LR_DiningTable_D)
 Dimmer S_LR_DiningTable2_D "Dining Table 2 Dimmer" (C_LR_DiningTable_D)
 
-Switch S_LR_Couch1_S "Couch 1" (C_LR_Couch_S) {hue:}
-Switch S_LR_Couch2_S "Couch 2" (C_LR_Couch_S) {hue:}
-Switch S_LR_Couch3_S "Couch 3" (C_LR_Couch_S) {hue:}
+Switch S_LR_Couch1_S "Couch 1" (C_LR_Couch_S) { channel="hue:0210:00178827902c:bulb1:Switch" }
+Switch S_LR_Couch2_S "Couch 2" (C_LR_Couch_S) { channel="hue:0210:00178827902c:bulb2:Switch" }
+Switch S_LR_Couch3_S "Couch 3" (C_LR_Couch_S) { channel="hue:0210:00178827902c:bulb3:Switch" }
 Dimmer S_LR_Couch1_D "Couch 1 Dimmer" (C_LR_Couch_D) {hue:}
 Dimmer S_LR_Couch2_D "Couch 2 Dimmer" (C_LR_Couch_D) {hue:}
 Dimmer S_LR_Couch3_D "Couch 3 Dimmer" (C_LR_Couch_D) {hue:}
