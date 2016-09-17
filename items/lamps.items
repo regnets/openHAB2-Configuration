@@ -23,7 +23,7 @@
 /*
  * House Groups
  */
-Group:Switch:OR(ON, OFF) H_Lamps_S "All Lamps" <light>
+Group:Switch:OR(ON,OFF) H_Lamps_S "All Lamps" <light>
 Group:Dimmer:AVG H_Lamps_D "All Lamps Dimmer" <dimmablelight>
 Group:Dimmer:AVG H_Lamps_T "All Lamps Color Temperature" <colorlight>
 Group:Color:AVG H_Lamps_C "All Lamps Color" <colorlight>
