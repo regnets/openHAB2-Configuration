@@ -1,5 +1,19 @@
 Bridge hue:bridge:00178827902c [ ipAddress="10.0.0.87", userName="zLPra267TGHKz-jEzK1bqQ5SAH0FCXjXDGFbJ0GP" ] {
-	0210 bulb1 [ lightId="1" ]
-	0210 bulb2 [ lightId="2" ]
-	0210 bulb3 [ lightId="3" ]
-}
+	0210 1 [ lightId="1" ]
+	0210 2 [ lightId="2" ]
+	0210 3 [ lightId="3" ]
+	0200 6 [ lightId="6" ]
+	0200 7 [ lightId="7" ] 
+	0200 8 [ lightId="8" ]
+	0200 9 [ lightId="9" ] 
+	0220 10 [ lightId="10" ]
+	0100 11 [ lightId="11" ]
+	0100 12 [ lightId="12" ]
+	0100 13 [ lightId="13" ]
+	0220 14 [ lightId="14" ]
+	0210 15 [ lightId="15" ]
+	0210 16 [ lightId="16" ]
+	0100 17 [ lightId="17" ]
+	0100 18 [ lightId="18" ]
+	0210 19 [ lightId="19" ]
+} 
