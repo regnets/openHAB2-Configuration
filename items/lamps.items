@@ -19,18 +19,19 @@
  * itemtype itemname ["labeltext"] [<iconname>] [(group1, group2, ...)] [{bindingconfig}]
  */
 
+Group Everything "All Groups" 
 
 /*
  * House Groups
  */
-Group:Switch:OR(ON, OFF) H_Lamps_S "All Lamps" <light>
-Group:Dimmer:AVG H_Lamps_D "All Lamps Dimmer" <dimmablelight>
-Group:Dimmer:AVG H_Lamps_T "All Lamps Color Temperature" <colorlight>
-Group:Color:AVG H_Lamps_C "All Lamps Color" <colorlight>
+Group:Switch:OR(ON, OFF) H_Lamps_S "All Lamps" <light> (Everything)
+Group:Dimmer:AVG H_Lamps_D "All Lamps Dimmer" <dimmablelight> (Everything)
+Group:Dimmer:AVG H_Lamps_T "All Lamps Color Temperature" <colorlight> (Everything)
+Group:Color:AVG H_Lamps_C "All Lamps Color" <colorlight> (Everything)
 
-Group:Switch:OR(ON, OFF) H_Signal_S "All Signal" <light> 
-Group:Dimmer:AVG H_Signal_D "All Signal Dimmer" <dimmablelight>
-Group:Color:AVG H_Signal_C "All Signal Color" <colorlight>
+Group:Switch:OR(ON, OFF) H_Signal_S "All Signal" <light> (Everything) 
+Group:Dimmer:AVG H_Signal_D "All Signal Dimmer" <dimmablelight> (Everything)
+Group:Color:AVG H_Signal_C "All Signal Color" <colorlight> (Everything)
 
 
 
@@ -83,7 +84,7 @@ Group:Color:AVG C_LR_Books_C "Books Color" <colorlight> (R_LR_C)
 
 Group:Switch:AND(ON, OFF C_BR_Bed_S "Bed" <light> (R_BR_S)
 Group:Dimmer:AVG C_BR_Bed_D "Bed Dimmer" <dimmablelight> (R_BR_D)
-Groupp:Color:AVG C_BR_Bed_C "Bed Color" <colorlight>(R_BR_C)
+Group:Color:AVG C_BR_Bed_C "Bed Color" <colorlight> (R_BR_C)
 
 Group:Switch:AND(ON, OFF C_GR_Bed_S "Bed" <light> (R_GR_S)
 Group:Dimmer:AVG C_GR_Bed_D "Bed Dimmer" <dimmablelight> (R_GR_D)
@@ -93,46 +94,46 @@ Group:Dimmer:AVG C_GR_Bed_T "Bed Temperature" <colorlight> (R_GR_T)
 /*
  * Single Lamps! Finally!
  */
-Switch S_Signal1_S "Signal Livingroom" (H_Signal_S) {hue:}
-Switch S_Signal2_S "Signal Hallway" (H_Signal_S) {hue:}
-Dimmer S_Signal1_D "Signal Livingroom Dimmer" (H_Signal_D) {hue:}
-Dimmer S_Signal2_D "Signal Hallway Dimmer" (H_Signal_D) {hue:}
-Color S_Signal1_C "Signal Livingroom Color" (H_Signal_C) {hue:}
-Color S_Signal2_C "Signal Hallway Color" (H_Signal_C) {hue:}
+Switch S_Signal1_S "Signal Livingroom" (H_Signal_S) { channel="hue:0200:00178827902c:6:brightness" }
+Switch S_Signal2_S "Signal Hallway" (H_Signal_S) { channel="hue:0200:00178827902c:7:brightness" }
+Dimmer S_Signal1_D "Signal Livingroom Dimmer" (H_Signal_D) { channel="hue:0200:00178827902c:6:brightness" }
+Dimmer S_Signal2_D "Signal Hallway Dimmer" (H_Signal_D) { channel="hue:0200:00178827902c:7:brightness" }
+Color S_Signal1_C "Signal Livingroom Color" (H_Signal_C) { channel="hue:0200:00178827902c:6:color" }
+Color S_Signal2_C "Signal Hallway Color" (H_Signal_C) { channel="hue:0200:00178827902c:7:color" }
  
 Switch S_LR_DiningTable1_S "Dining Table 1" (C_LR_DiningTable_S) {hue:}
 Switch S_LR_DiningTable2_S "Dining Table 2" (C_LR_DiningTable_S) {hue:}
 Dimmer S_LR_DiningTable1_D "Dining Table 1 Dimmer" (C_LR_DiningTable_D)
 Dimmer S_LR_DiningTable2_D "Dining Table 2 Dimmer" (C_LR_DiningTable_D)
 
-Switch S_LR_Couch1_S "Couch 1" (C_LR_Couch_S) { channel="hue:0210:00178827902c:bulb1:brightness" }
-Switch S_LR_Couch2_S "Couch 2" (C_LR_Couch_S) { channel="hue:0210:00178827902c:bulb2:brightness" }
-Switch S_LR_Couch3_S "Couch 3" (C_LR_Couch_S) { channel="hue:0210:00178827902c:bulb3:brightness" }
-Dimmer S_LR_Couch1_D "Couch 1 Dimmer" (C_LR_Couch_D) { channel="hue:0210:00178827902c:bulb1:brightness" }
-Dimmer S_LR_Couch2_D "Couch 2 Dimmer" (C_LR_Couch_D) { channel="hue:0210:00178827902c:bulb2:brightness" }
-Dimmer S_LR_Couch3_D "Couch 3 Dimmer" (C_LR_Couch_D) { channel="hue:0210:00178827902c:bulb3:brightness" }
-Dimmer S_LR_Couch1_T "Couch 1 Temperature" (C_LR_Couch_T) { channel="hue:0210:00178827902c:bulb1:color_temperature" }
-Dimmer S_LR_Couch2_T "Couch 2 Temperature" (C_LR_Couch_T) { channel="hue:0210:00178827902c:bulb2:color_temperature" }
-Dimmer S_LR_Couch3_T "Couch 3 Temperature" (C_LR_Couch_T) { channel="hue:0210:00178827902c:bulb3:color_temperature" }
-Color S_LR_Couch1_C "Couch 1 Color" (C_LR_Couch_C) { channel="hue:0210:00178827902c:bulb1:color" }
-Color S_LR_Couch2_C "Couch 2 Color" (C_LR_Couch_C) { channel="hue:0210:00178827902c:bulb2:color" }
-Color S_LR_Couch3_C "Couch 3 Color" (C_LR_Couch_C) { channel="hue:0210:00178827902c:bulb3:color" }
+Switch S_LR_Couch1_S "Couch 1" (C_LR_Couch_S) { channel="hue:0210:00178827902c:1:brightness" }
+Switch S_LR_Couch2_S "Couch 2" (C_LR_Couch_S) { channel="hue:0210:00178827902c:2:brightness" }
+Switch S_LR_Couch3_S "Couch 3" (C_LR_Couch_S) { channel="hue:0210:00178827902c:3:brightness" }
+Dimmer S_LR_Couch1_D "Couch 1 Dimmer" (C_LR_Couch_D) { channel="hue:0210:00178827902c:1:brightness" }
+Dimmer S_LR_Couch2_D "Couch 2 Dimmer" (C_LR_Couch_D) { channel="hue:0210:00178827902c:2:brightness" }
+Dimmer S_LR_Couch3_D "Couch 3 Dimmer" (C_LR_Couch_D) { channel="hue:0210:00178827902c:3:brightness" }
+Dimmer S_LR_Couch1_T "Couch 1 Temperature" (C_LR_Couch_T) { channel="hue:0210:00178827902c:1:color_temperature" }
+Dimmer S_LR_Couch2_T "Couch 2 Temperature" (C_LR_Couch_T) { channel="hue:0210:00178827902c:2:color_temperature" }
+Dimmer S_LR_Couch3_T "Couch 3 Temperature" (C_LR_Couch_T) { channel="hue:0210:00178827902c:3:color_temperature" }
+Color S_LR_Couch1_C "Couch 1 Color" (C_LR_Couch_C) { channel="hue:0210:00178827902c:1:color" }
+Color S_LR_Couch2_C "Couch 2 Color" (C_LR_Couch_C) { channel="hue:0210:00178827902c:2:color" }
+Color S_LR_Couch3_C "Couch 3 Color" (C_LR_Couch_C) { channel="hue:0210:00178827902c:3:color" }
 
-Switch S_LR_Books1_S "Books 1" (C_LR_Books_S) {hue:}
-Switch S_LR_Books2_S "Books 2" (C_LR_Books_S) {hue:}
-Dimmer S_LR_Books1_D "Books 1 Dimmer" (C_LR_Books_D) {hue:}
-Dimmer S_LR_Books2_D "Books 2 Dimmer" (C_LR_Books_D) {hue:}
-Dimmer S_LR_Books1_T "Books 1 Temperature" (C_LR_Books_T) {hue:}
-Dimmer S_LR_Books2_T "Books 2 Temperature" (C_LR_Books_T) {hue:}
-Color S_LR_Books1_C "Books 1 Color" (C_LR_Books_C) {hue:}
-Color S_LR_Books2_C "Books 2 Color" (C_LR_Books_C) {hue:}
+Switch S_LR_Books1_S "Books 1" (C_LR_Books_S) { channel="hue:0210:00178827902c:15:brightness" }
+Switch S_LR_Books2_S "Books 2" (C_LR_Books_S) { channel="hue:0210:00178827902c:16:brightness" }
+Dimmer S_LR_Books1_D "Books 1 Dimmer" (C_LR_Books_D) { channel="hue:0210:00178827902c:15:brightness" }
+Dimmer S_LR_Books2_D "Books 2 Dimmer" (C_LR_Books_D) { channel="hue:0210:00178827902c:16:brightness" }
+Dimmer S_LR_Books1_T "Books 1 Temperature" (C_LR_Books_T) { channel="hue:0210:00178827902c:15:color_temperature" }
+Dimmer S_LR_Books2_T "Books 2 Temperature" (C_LR_Books_T) { channel="hue:0210:00178827902c:16:color_temperature" }
+Color S_LR_Books1_C "Books 1 Color" (C_LR_Books_C) { channel="hue:0210:00178827902c:15:color" }
+Color S_LR_Books2_C "Books 2 Color" (C_LR_Books_C) { channel="hue:0210:00178827902c:16:color"}
 
-Switch S_BR_Bed1_S "Bed 1" (C_BR_Bed_S)
-Switch S_BR_Bed2_S "Bed 2" (C_BR_Bed_S)
-Dimmer S_BR_Bed1_D "Bed 1 Dimmer" (C_BR_Bed_D)
-Dimmer S_BR_Bed2_D "Bed 2 Dimmer" (C_BR_Bed_D)
-Color S_BR_Bed1_C "Bed 1 Color" (C_BR_Bed_C)
-Color S_BR_Bed2_C "Bed 2 Color" (C_BR_Bed_C)
+Switch S_BR_Bed1_S "Bed 1" (C_BR_Bed_S) { channel="hue:0200:00178827902c:8:brightness" }
+Switch S_BR_Bed2_S "Bed 2" (C_BR_Bed_S) { channel="hue:0200:00178827902c:9:brightness" }
+Dimmer S_BR_Bed1_D "Bed 1 Dimmer" (C_BR_Bed_D) { channel="hue:0200:00178827902c:8:brightness" }
+Dimmer S_BR_Bed2_D "Bed 2 Dimmer" (C_BR_Bed_D) { channel="hue:0200:00178827902c:9:brightness" }
+Color S_BR_Bed1_C "Bed 1 Color" (C_BR_Bed_C) { channel="hue:0200:00178827902c:8:color" }
+Color S_BR_Bed2_C "Bed 2 Color" (C_BR_Bed_C) { channel="hue:0200:00178827902c:9:color" }
 
 Switch S_GR_Bed1_S "Bed 1" (C_GR_Bed_S) {hue:}
 Switch S_GR_Bed2_S "Bed 2" (C_GR_Bed_S) {hue:}
@@ -147,3 +148,10 @@ Dimmer S_GR_Ceiling_D "Ceiling Dimmer" <dimmablelight> (R_GR_D) {hue:}
 Switch S_HW_Shelf_S "Shelf" <light> (R_HW_S) {hue:}
 Dimmer S_HW_Shelf_D "Shelf Dimmer" <dimmablelight> (R_HW_D) {hue:}
 Dimmer S_HW_Shelf_T "Shelf Temperature" (R_HW_D) {hue:}
+
+Switch S_BR_Ceiling_S "Ceiling" (R_BR_S) { channel="hue:0210:00178827902c:19:brightness" }
+Dimmer S_BR_Ceiling_D "Ceiling Dimmer" (R_BR_D) { channel="hue:0210:00178827902c:19:brightness" }
+Dimmer S_BR_Ceiling_T "Ceiling Temperature" (R_BR_T) { channel="hue:0210:00178827902c:19:color_temperature" }
+Color S_BR_Ceiling_C "Ceiling Color" (R_BR_C) { channel="hue:0210:00178827902c:19:color" }
+
+
