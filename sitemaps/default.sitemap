@@ -29,7 +29,11 @@ sitemap default label="Main Menu" {
             Frame {
                 Switch item=C_BR_Bed_S
                 Slider item=C_BR_Bed_D label="- Dimmer" visibility=[C_BR_Bed_S==ON]
-                Slider item=C_BR_Bed_C label="- Color" visibility=[C_BR_Bed_S==ON]
+                Colorpicker item=C_BR_Bed_C label="- Color" visibility=[C_BR_Bed_S==ON]
+
+                Switch item=S_BR_Ceiling_S
+                Slider item=S_BR_Ceiling_D label="- Dimmer" visibility=[S_BR_Ceiling_S==ON]
+                Slider item=S_BR_Ceiling_T label="- Color" visibility=[S_BR_Ceiling_S==ON]
             }
         }
         Text label="Guestroom" icon="bedroom_red" {
@@ -76,6 +80,7 @@ sitemap default label="Main Menu" {
                         Switch item=S_PresenceMobileStefanie_S
                     }
                 }
+		Group item=Everything
                 Switch item=S_updateConfiguration_S icon="incline" mappings=[ON="Start"]
             }
         }
