@@ -56,8 +56,11 @@ sitemap default label="Main Menu" {
             }
             Frame {
                 Switch item=S_HW_Shelf_S
-                Slider item=S_HW_Shelf_D label="-  Dimmer" visibility=[S_HW_Shelf_S==ON]
+                Slider item=S_HW_Shelf_D label="- Dimmer" visibility=[S_HW_Shelf_S==ON]
                 Colorpicker item=S_HW_Shelf_T label="-  Color" visibility=[S_HW_Shelf_S==ON]
+                
+                Switch item=S_HW_Ceiling_S
+                Slider item=S_HW_Ceiling_D label="- Dimmer" visibility=[S_HW_Ceiling_S==ON]
             }
         }
     }
@@ -80,7 +83,12 @@ sitemap default label="Main Menu" {
                         Switch item=S_PresenceMobileStefanie_S
                     }
                 }
-		Group item=Everything
+                Text label="Timings" icon="" {
+                    Frame {
+                        Switch item=G_PresenceAll_S
+                    }
+                }
+		Group item=H_Lamps
                 Switch item=S_updateConfiguration_S icon="incline" mappings=[ON="Start"]
             }
         }
