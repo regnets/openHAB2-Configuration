@@ -24,6 +24,7 @@
  * House Groups
  */
 Group H_Lamps "All Lamps"
+String H_Scene "House Scenes" <video>
 Group:Switch:OR(ON, OFF) H_Lamps_S "All Lamps" <light>
 Group:Dimmer:AVG H_Lamps_D "All Lamps Dimmer" <dimmablelight>
 Group:Dimmer:AVG H_Lamps_T "All Lamps Color Temperature" <colorlight>
@@ -34,28 +35,28 @@ Group:Color:AVG H_Lamps_C "All Lamps Color" <colorlight>
  * Every Room needs a Group to Turn Off all Lamps at Once - Even ih there is only one Light!
  */
 Group R_LR "Livingroom Lamps" (H_Lamps)
-Number R_LR_Scene "Scenes" <video>
+String R_LR_Scene "Scenes" <video>
 Group:Switch:OR(ON, OFF) R_LR_S "Livingroom Lamps" <light> (H_Lamps_S)
 Group:Dimmer:AVG R_LR_D "Livingroom Dimmer" <dimmablelight> (H_Lamps_D)
 Group:Dimmer:AVG R_LR_T "Livingroom Temperature" <colorlight> (H_Lamps_T)
 Group:Color:AVG R_LR_C "Livingroom Color" <colorlight> (H_Lamps_C)
 
 Group R_BR "Bedroom Lamps" (H_Lamps)
-Number R_BR_Scene "Scenes" <video>
+String R_BR_Scene "Scenes" <video>
 Group:Switch:OR(ON, OFF) R_BR_S "Bedroom Lamps" <light> (H_Lamps_S)
 Group:Dimmer:AVG R_BR_D "Bedroom Dimmer" <dimmablelight> (H_Lamps_D)
 Group:Dimmer:AVG R_BR_T "Bedroom Temperature" <colorlight> (H_Lamps_T)
 Group:Color:AVG R_BR_C "Bedroom Color" <colorlight> (H_Lamps_C)
 
 Group R_HW "Hallway Lamps" (H_Lamps)
-Number R_HW_Scene "Scenes" <video>
+String R_HW_Scene "Scenes" <video>
 Group:Switch:OR(ON, OFF) R_HW_S "Hallway Lamps" <light> (H_Lamps_S)
 Group:Dimmer:AVG R_HW_D "Hallway Dimmer" <dimmablelight> (H_Lamps_D)
 Group:Dimmer:AVG R_HW_T "Hallway Temperature" <colorlight> (H_Lamps_T)
 Group:Color:AVG R_HW_C "Hallway Color" <colorlight> (H_Lamps_C)
 
 Group R_GR "Guestroom Lamps" (H_Lamps)
-Number R_GR_Scene "Scenes" <video>
+String R_GR_Scene "Scenes" <video>
 Group:Switch:OR(ON, OFF) R_GR_S "Guestroom Lamps" <light> (H_Lamps_S)
 Group:Dimmer:AVG R_GR_D "Guestroom Dimmer" <dimmablelight> (H_Lamps_D)
 Group:Dimmer:AVG R_GR_T "Guestroom Temperature" <colorlight> (H_Lamps_T)
