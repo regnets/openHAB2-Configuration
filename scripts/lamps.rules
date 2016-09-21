@@ -7,7 +7,7 @@ when
   Item G_PresenceAll_S changed OFF to ON or 
 then
   if (S_Night_S.state == ON AND G_PresenceAll_S == ON) {
-    H_Scene.sendCommand("Evening")
+    H_Scene.sendCommand("EVENING")
   }
 end
 
