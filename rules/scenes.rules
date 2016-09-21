@@ -1,0 +1,93 @@
+rule "House Scenes"
+when 
+  Item H_Scene received Command
+then
+	R_LR_Scene.sendCommand(H_Scene.state)
+	R_GR_Scene.sendCommand(H_Scene.state)
+	R_HW_Scene.sendCommand(H_Scene.state)
+	R_BR_Scene.sendCommand(H_Scene.state)
+
+	if (H_Scene.state == "COMING_HOME") {
+		createTimer(now.plusMinutes(15), [| 
+			R_LR_Scene.sendCommand("EVENING")
+			R_GR_Scene.sendCommand("EVENING")
+			R_HW_Scene.sendCommand("EVENING")
+			R_BR_Scene.sendCommand("EVENING")
+		]
+	}
+end
+
+
+
+rule "Livingroom Scenes"
+when 
+  Item R_LR_Scene received Command
+then
+  if (R_LR_Scene.state == "OFF") {
+    //reset Lamps to Standard Values for this room then switch everything off
+    R_LR_D.postUpdate(80)
+    R_LR_T.postUpdate(60)
+    R_LR_S.sendCommand(OFF)
+  } else if (R_LR_Scene.state == "COMING_HOME") {
+    R_LR_Scene.sendCommand("BRIGHT")
+  } else if (R_LR_Scene.state == "EVENING") {
+	  R_LR_Books_S.sendCommand(OFF)
+	  R_LR_Couch_S.sendCommand(ON)
+	  R_LR_DiningTable_S.sendCommand(OFF)
+  } else if (R_LR_Scene.state == "BRIGHT") {
+	  R_LR_S.sendCommand(ON)
+	  R_LR_D.sendCommand(new PercentType(100))
+	  R_LR_T.sendCommand(new PercentType(60))
+ }
+end
+
+
+
+rule "Hallway Scenes"
+when 
+  Item R_HW_Scene received Command
+then 
+  if (R_HW_Scene.state == "OFF") {
+    //reset Lamps to Standard Values for this room then switch everything off
+    R_HW_D.postUpdate(80)
+    R_HW_T.postUpdate(60)
+    R_HW_S.sendCommand(OFF)
+  } else if (R_HW_Scene.state == "COMING_HOME") {
+    R_HW_Scene.sendCommand("BRIGHT")
+  } else if (R_HW_Scene.state == "EVENING") {	
+    R_HW_Ceiling_S.sendCommand(OFF)
+    R_HW_Shelf_S.sendCommand(ON)
+  } else if (R_HW_Scene.state == "BRIGHT") {
+    R_HW_S.sendCommand(ON)
+    R_HW_D.sendCommand(new PercentType(100))
+    R_HW_T.sendCommand(new PercentType(60))
+  }
+end
+
+
+
+rule "Guestroom Scenes"
+when 
+  Item R_GR_Scene received Command
+then 
+  if (R_GR_Scene.state == "OFF") {
+    //reset Lamps to Standard Values for this room then switch everything off
+    R_GR_D.postUpdate(80)
+    R_GR_T.postUpdate(60)
+    R_GR_S.sendCommand(OFF)
+  }
+end
+
+
+
+rule "Bedroom Scenes"
+when 
+  Item R_BR_Scene received Command
+then
+  if (R_LR_Scene.state == "OFF") {
+    //reset Lamps to Standard Values for this room then switch everything off
+    R_BR_D.postUpdate(80)
+    R_BR_T.postUpdate(60)
+    R_BR_S.sendCommand(OFF)
+  } 
+end
