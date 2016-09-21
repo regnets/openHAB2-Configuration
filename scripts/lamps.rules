@@ -1,0 +1,32 @@
+
+
+
+rule "Turn Lights on if somebody comes home and it is night"
+when
+  Item S_Night_S changed OFF to ON or 
+  Item G_PresenceAll_S changed OFF to ON or 
+then
+  if (S_Night_S.state == ON AND G_PresenceAll_S == ON) {
+    H_Scene.sendCommand("Evening")
+  }
+end
+
+
+
+rule "Toggle Day/Night if Time is Sunset"
+when
+  Time is S_SunsetTime 
+then
+  S_Night_S.sendCommand(ON)
+  S_Day_S.sendCommand(OFF)
+end
+
+
+
+rule "Toggle Day/Night if Time is Sunrise"
+when
+  Time is S_SunriseTime
+then
+  S_Night_S.sendCommand(OFF)
+  S_Day_S.sendCommand(ON)
+end
