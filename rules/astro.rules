@@ -1,0 +1,31 @@
+import org.joda.time.*
+import org.openhab.core.library.types.*
+
+rule "Astro Times Changes"
+when 
+  Item Time_Sunrise changed or
+  Item Time_Sunset changed
+then
+  Time_SunriseLampsOff.postUpdate(new DateTime((Time_Sunrise.state as DateTimeType).calendar.timeInMillis).plusHours(1).toString)
+  Time_SunsetLampsOn.postUpdate(new DateTime((Time_Sunset.state as DateTimeType).calendar.timeInMillis).minusHours(1).toString)
+end
+
+rule "Refresh Astro Timings"
+when
+  Time cron "0 * * * * ? *" 
+then
+  var DateTime startDay = new DateTime((Time_SunriseLampsOff.state as DateTimeType).calendar.timeInMillis)
+  var DateTime startNight = new DateTime((Time_SunsetLampsOn.state as DateTimeType).calendar.timeInMillis)
+
+  if (now.getHourOfDay() == startNight.getHourOfDay() && now.getMinuteOfHour() == startNight.getMinuteOfHour()) {
+    Time_Night_S.sendCommand(ON)
+    Time_Day_S.sendCommand(OFF)
+    Time_TimeOfDay.sendCommand("Night")
+  }
+
+  if (now.getHourOfDay() == startDay.getHourOfDay() && now.getMinuteOfHour() == startDay.getMinuteOfHour()) {
+    Time_Night_S.sendCommand(OFF)
+    Time_Day_S.sendCommand(ON)
+    Time_TimeOfDay.sendCommand("Day")
+  }
+end

@@ -16,4 +16,5 @@ Bridge hue:bridge:00178827902c [ ipAddress="10.0.0.87", userName="zLPra267TGHKz-
 	0100 17 [ lightId="17" ]
 	0100 18 [ lightId="18" ]
 	0210 19 [ lightId="19" ]
+	0210 20 [ lightId="20" ]
 } 

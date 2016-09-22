@@ -1,12 +1,13 @@
 sitemap default label="Main Menu" {
     Frame {
-       Switch item=H_Lamps_S mappings=[ON="On",OFF="Off"]
+       Switch item=H_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"] 
+       Switch item=H_Scene label="Scene" mappings=["Cozy"="Cozy"]
     }
     Frame {
         Text label="Livingroom" icon="sofa" {
             Frame {
-                Switch item=R_LR_S mappings=[ON="On",OFF="Off"]
-                Switch item=R_LR_Scene label="Scenes" mappings=[1="Bright", 2="TV", 3="Eating", 4="Cozy"]
+				Switch item=R_LR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"] 
+				Switch item=R_LR_Scene label="Scene" mappings=["TV"="TV", "Eating"="Eating", "Cozy"="Cozy"] 
             }
             Frame {
                 Switch item=C_LR_Couch_S
@@ -23,8 +24,8 @@ sitemap default label="Main Menu" {
         }
         Text label="Bedroom" icon="bedroom_blue" {
             Frame {
-                Switch item=R_BR_S mappings=[ON="On",OFF="Off"]
-                Switch item=R_BR_Scene label="Scenes" mappings=[1="Bright", 2="Reading", 3="Cozy"]
+                Switch item=R_BR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"] 
+                Switch item=R_BR_Scene label="Scene" mappings=["Reading"="Reading", "Cozy"="Cozy"] 
             }
             Frame {
                 Switch item=C_BR_Bed_S
@@ -38,8 +39,8 @@ sitemap default label="Main Menu" {
         }
         Text label="Guestroom" icon="bedroom_red" {
             Frame {
-                Switch item=R_GR_S mappings=[ON="On",OFF="Off"]
-                Switch item=R_GR_Scene label="Scenes" mappings=[1="Bright", 2="Reading", 3="Cozy"]
+                Switch item=R_GR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"] 
+                Switch item=R_GR_Scene label="Scene" mappings=["Reading"="Reading", "Cozy"="Cozy"] 
             }
             Frame {
                 Switch item=C_GR_Bed_S
@@ -52,12 +53,13 @@ sitemap default label="Main Menu" {
         }
         Text label="Hallway" icon="corridor" {
             Frame {
-                Switch item=R_HW_S mappings=[ON="On",OFF="Off"]
+                Switch item=R_GR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"] 
+                Switch item=R_GR_Scene label="Scene" mappings=["Night"="Night"] 
             }
             Frame {
                 Switch item=S_HW_Shelf_S
                 Slider item=S_HW_Shelf_D label="- Dimmer" visibility=[S_HW_Shelf_S==ON]
-                Colorpicker item=S_HW_Shelf_T label="-  Color" visibility=[S_HW_Shelf_S==ON]
+                Slider item=S_HW_Shelf_T label="- Color" visibility=[S_HW_Shelf_S==ON]
                 
                 Switch item=S_HW_Ceiling_S
                 Slider item=S_HW_Ceiling_D label="- Dimmer" visibility=[S_HW_Ceiling_S==ON]
@@ -83,9 +85,18 @@ sitemap default label="Main Menu" {
                         Switch item=S_PresenceMobileStefanie_S
                     }
                 }
-                Text label="Timings" icon="" {
+                Text label="Astro" icon="clock" {
                     Frame {
-                        Switch item=G_PresenceAll_S
+					 
+					
+						Switch item=Test
+						Switch item=Time_Day_S
+						Switch item=Time_Night_S
+                        Text item=Time_Sunrise
+						Text item=Time_Sunset
+						Text item=Time_SunriseLampsOff
+						Text item=Time_SunsetLampsOn
+						Text item=Time_TimeOfDay
                     }
                 }
 		Group item=H_Lamps

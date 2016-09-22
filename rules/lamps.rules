@@ -3,7 +3,7 @@ when
   Item S_Day_S changed from OFF to ON
   Item G_PresenceAll_s changed from ON to OFF
 then
-  H_Scene.sendCommand("ALLOFF")
+  H_Scene.sendCommand("Off")
 end
 
 
@@ -14,26 +14,6 @@ when
   Item G_PresenceAll_S changed from OFF to ON
 then
   if (S_Night_S.state == ON AND G_PresenceAll_S == ON) {
-    H_Scene.sendCommand("EVENING")
+    H_Scene.sendCommand("Evening")
   }
-end
-
-
-
-rule "Toggle Day/Night if Time is Sunset"
-when
-  Time is S_SunsetTime 
-then
-  S_Night_S.sendCommand(ON)
-  S_Day_S.sendCommand(OFF)
-end
-
-
-
-rule "Toggle Day/Night if Time is Sunrise"
-when
-  Time is S_SunriseTime
-then
-  S_Night_S.sendCommand(OFF)
-  S_Day_S.sendCommand(ON)
 end

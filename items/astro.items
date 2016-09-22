@@ -1,2 +1,8 @@
-Item S_Day_S "Day"
-Item S_Night_S "Night"
+Switch Time_Day_S "Day"
+Switch Time_Night_S "Night"
+String Time_TimeOfDay "Time of Day [%s]"
+DateTime Time_Sunrise "Sunrise [%1$tH:%1$tM]" { channel="astro:sun:home:rise#start" }
+DateTime Time_Sunset "Sunset [%1$tH:%1$tM]" { channel="astro:sun:home:set#end" }
+DateTime Time_SunriseLampsOff "Lamps Off [%1$tH:%1$tM]"
+DateTime Time_SunsetLampsOn "Lamps On [%1$tH:%1$tM]"
+Switch Test

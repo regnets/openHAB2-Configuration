@@ -23,8 +23,8 @@
 /*
  * House Groups
  */
-Group H_Lamps "All Lamps"
-String H_Scene "House Scenes" <video>
+Group H_Lamps "All Lamps" <light>
+String H_Scene "Scene" <video>
 Group:Switch:OR(ON, OFF) H_Lamps_S "All Lamps" <light>
 Group:Dimmer:AVG H_Lamps_D "All Lamps Dimmer" <dimmablelight>
 Group:Dimmer:AVG H_Lamps_T "All Lamps Color Temperature" <colorlight>
@@ -34,29 +34,29 @@ Group:Color:AVG H_Lamps_C "All Lamps Color" <colorlight>
  * Room Groups
  * Every Room needs a Group to Turn Off all Lamps at Once - Even ih there is only one Light!
  */
-Group R_LR "Livingroom Lamps" (H_Lamps)
-String R_LR_Scene "Scenes" <video>
+Group R_LR "Livingroom Lamps" <light> (H_Lamps)
+String R_LR_Scene "Scene" <video>
 Group:Switch:OR(ON, OFF) R_LR_S "Livingroom Lamps" <light> (H_Lamps_S)
 Group:Dimmer:AVG R_LR_D "Livingroom Dimmer" <dimmablelight> (H_Lamps_D)
 Group:Dimmer:AVG R_LR_T "Livingroom Temperature" <colorlight> (H_Lamps_T)
 Group:Color:AVG R_LR_C "Livingroom Color" <colorlight> (H_Lamps_C)
 
-Group R_BR "Bedroom Lamps" (H_Lamps)
-String R_BR_Scene "Scenes" <video>
+Group R_BR "Bedroom Lamps" <light> (H_Lamps)
+String R_BR_Scene "Scene" <video>
 Group:Switch:OR(ON, OFF) R_BR_S "Bedroom Lamps" <light> (H_Lamps_S)
 Group:Dimmer:AVG R_BR_D "Bedroom Dimmer" <dimmablelight> (H_Lamps_D)
 Group:Dimmer:AVG R_BR_T "Bedroom Temperature" <colorlight> (H_Lamps_T)
 Group:Color:AVG R_BR_C "Bedroom Color" <colorlight> (H_Lamps_C)
 
-Group R_HW "Hallway Lamps" (H_Lamps)
-String R_HW_Scene "Scenes" <video>
+Group R_HW "Hallway Lamps" <light> (H_Lamps)
+String R_HW_Scene "Scene" <video>
 Group:Switch:OR(ON, OFF) R_HW_S "Hallway Lamps" <light> (H_Lamps_S)
 Group:Dimmer:AVG R_HW_D "Hallway Dimmer" <dimmablelight> (H_Lamps_D)
 Group:Dimmer:AVG R_HW_T "Hallway Temperature" <colorlight> (H_Lamps_T)
 Group:Color:AVG R_HW_C "Hallway Color" <colorlight> (H_Lamps_C)
 
-Group R_GR "Guestroom Lamps" (H_Lamps)
-String R_GR_Scene "Scenes" <video>
+Group R_GR "Guestroom Lamps" <light> (H_Lamps)
+String R_GR_Scene "Scene" <video>
 Group:Switch:OR(ON, OFF) R_GR_S "Guestroom Lamps" <light> (H_Lamps_S)
 Group:Dimmer:AVG R_GR_D "Guestroom Dimmer" <dimmablelight> (H_Lamps_D)
 Group:Dimmer:AVG R_GR_T "Guestroom Temperature" <colorlight> (H_Lamps_T)
@@ -74,34 +74,34 @@ Group:Color:AVG R_GR_C "Guestroom Color" <colorlight> (H_Lamps_C)
  * to a room, however they are directly subordinated to the house. Also they are not intended to be switched by 
  * homekit so they don't get exposed by the homekit bridge (no tagging)
  */ 
-Group C_Singal "All Signal Lamps" (H_Lamps)
-Group:Switch:OR(ON, OFF) C_Signal_S "All Signal"
-Group:Dimmer:AVG C_Signal_D "All Signal Dimmer"
-Group:Color:AVG C_Signal_C "All Signal Color"
+Group C_Signal "All Signal Lamps" <light> (H_Lamps)
+Group:Switch:OR(ON, OFF) C_Signal_S "All Signal" <light>
+Group:Dimmer:AVG C_Signal_D "All Signal Dimmer" <dimmablelight> 
+Group:Color:AVG C_Signal_C "All Signal Color" <colorlight>
 
-Group C_LR_DiningTable "Dining Table" (R_LR)
+Group C_LR_DiningTable "Dining Table" <light> (R_LR)
 Group:Switch:AND(ON, OFF) C_LR_DiningTable_S "Dining Table" <light> (R_LR_S)
 Group:Dimmer:AND(ON, OFF) C_LR_DiningTable_D "Dining Table Dimmer" <dimmablelight> (R_LR_D)
 
-Group C_LR_Couch "Couch" (R_LR)
+Group C_LR_Couch "Couch" <light> (R_LR)
 Group:Switch:AND(ON, OFF) C_LR_Couch_S "Couch" <light> (R_LR_S)
 Group:Dimmer:AVG C_LR_Couch_D "Couch Dimmer" <dimmablelight> (R_LR_D)
 Group:Dimmer:AVG C_LR_Couch_T "Couch Temperature" <colorlight> (R_LR_T)
 Group:Color:AVG C_LR_Couch_C "Couch Color" <colorlight> (R_LR_C)
 
-Group C_LR_Books "Books" (R_LR)
+Group C_LR_Books "Books" <light> (R_LR)
 Group:Switch:AND(ON, OFF) C_LR_Books_S "Books" <light> (R_LR_S)
 Group:Dimmer:AVG C_LR_Books_D "Books Dimmer" <dimmablelight> (R_LR_D)
 Group:Dimmer:AVG C_LR_Books_T "Books Temperature" <colorlight> (R_LR_T)
 Group:Color:AVG C_LR_Books_C "Books Color" <colorlight> (R_LR_C)
 
-Group C_BR_Bed "Bed" (R_BR)
-Group:Switch:AND(ON, OFF C_BR_Bed_S "Bed" <light> (R_BR_S)
+Group C_BR_Bed "Bed" <light> (R_BR)
+Group:Switch:AND(ON, OFF) C_BR_Bed_S "Bed" <light> (R_BR_S)
 Group:Dimmer:AVG C_BR_Bed_D "Bed Dimmer" <dimmablelight> (R_BR_D)
 Group:Color:AVG C_BR_Bed_C "Bed Color" <colorlight> (R_BR_C)
 
-Group C_GR_Bed (R_GR)
-Group:Switch:AND(ON, OFF C_GR_Bed_S "Bed" <light> (R_GR_S)
+Group C_GR_Bed "Bed" <light> (R_GR)
+Group:Switch:AND(ON, OFF) C_GR_Bed_S "Bed" <light> (R_GR_S)
 Group:Dimmer:AVG C_GR_Bed_D "Bed Dimmer" <dimmablelight> (R_GR_D)
 Group:Dimmer:AVG C_GR_Bed_T "Bed Temperature" <colorlight> (R_GR_T)
 
@@ -110,16 +110,16 @@ Group:Dimmer:AVG C_GR_Bed_T "Bed Temperature" <colorlight> (R_GR_T)
  * Single Lamps! Finally!
  */
 Switch S_Signal1_S "Signal Livingroom" (C_Signal_S, C_Signal) { channel="hue:0200:00178827902c:6:brightness" }
-Switch S_Signal2_S "Signal Hallway" (C_Signal_S, C_Signal) { channel="hue:0200:00178827902c:7:brightness" }
-Dimmer S_Signal1_D "Signal Livingroom Dimmer" (C_Signal_D, C_Signal) { channel="hue:0200:00178827902c:6:brightness" }
+Switch S_Signal2_S "Signal Hallway"  (C_Signal_S, C_Signal) { channel="hue:0200:00178827902c:7:brightness" }
+Dimmer S_Signal1_D "Signal Livingroom Dimmer"  (C_Signal_D, C_Signal) { channel="hue:0200:00178827902c:6:brightness" }
 Dimmer S_Signal2_D "Signal Hallway Dimmer" (C_Signal_D, C_Signal) { channel="hue:0200:00178827902c:7:brightness" }
 Color S_Signal1_C "Signal Livingroom Color" (C_Signal_C, C_Signal) { channel="hue:0200:00178827902c:6:color" }
 Color S_Signal2_C "Signal Hallway Color" (C_Signal_C, C_Signal) { channel="hue:0200:00178827902c:7:color" }
  
-Switch S_LR_DiningTable1_S "Dining Table 1" (C_LR_DiningTable_S, C_LR_DiningTable) { channel="hue::00178827902c::brightness" }
-Switch S_LR_DiningTable2_S "Dining Table 2" (C_LR_DiningTable_S, C_LR_DiningTable) { channel="hue::00178827902c::brightness" }
-Dimmer S_LR_DiningTable1_D "Dining Table 1 Dimmer" (C_LR_DiningTable_D, C_LR_DiningTable) { channel="hue::00178827902c::brightness" }
-Dimmer S_LR_DiningTable2_D "Dining Table 2 Dimmer" (C_LR_DiningTable_D, C_LR_DiningTable) { channel="hue::00178827902c::brightness" }
+Switch S_LR_DiningTable1_S "Dining Table 1" (C_LR_DiningTable_S, C_LR_DiningTable) { channel="hue:0210:00178827902c:11:brightness" }
+Switch S_LR_DiningTable2_S "Dining Table 2" (C_LR_DiningTable_S, C_LR_DiningTable) { channel="hue:0210:00178827902c:12:brightness" }
+Dimmer S_LR_DiningTable1_D "Dining Table 1 Dimmer" (C_LR_DiningTable_D, C_LR_DiningTable) { channel="hue:0210:00178827902c:11:brightness" }
+Dimmer S_LR_DiningTable2_D "Dining Table 2 Dimmer" (C_LR_DiningTable_D, C_LR_DiningTable) { channel="hue:0210:00178827902c:12:brightness" }
 
 Switch S_LR_Couch1_S "Couch 1" (C_LR_Couch_S, C_LR_Couch) { channel="hue:0210:00178827902c:1:brightness" }
 Switch S_LR_Couch2_S "Couch 2" (C_LR_Couch_S, C_LR_Couch) { channel="hue:0210:00178827902c:2:brightness" }
@@ -157,12 +157,16 @@ Dimmer S_GR_Bed2_D "Bed 2 Dimmer" (C_GR_Bed_D, C_GR_Bed) { channel="hue::0017882
 Dimmer S_GR_Bed1_T "Bed 1 Temperature" (C_GR_Bed_T, C_GR_Bed) { channel="hue::00178827902c::color_temperature" }
 Dimmer S_GR_Bed2_T "Bed 2 Temperature" (C_GR_Bed_T, C_GR_Bed) { channel="hue::00178827902c::color_temperature" }
 
-Switch S_GR_Ceiling_S "Ceiling" <light> (R_GR_S, R_GR) { channel="hue::00178827902c::brightness" }
-Dimmer S_GR_Ceiling_D "Ceiling Dimmer" <dimmablelight> (R_GR_D, R_GR) { channel="hue::00178827902c::brightness" }
+Switch S_GR_Ceiling_S "Ceiling" (R_GR_S, R_GR) { channel="hue::00178827902c::brightness" }
+Dimmer S_GR_Ceiling_D "Ceiling Dimmer" (R_GR_D, R_GR) { channel="hue::00178827902c::brightness" }
 
-Switch S_HW_Shelf_S "Shelf" <light> (R_HW_S, R_HW) { channel="hue::00178827902c::brightness" }
-Dimmer S_HW_Shelf_D "Shelf Dimmer" <dimmablelight> (R_HW_D, R_HW) { channel="hue::00178827902c::brightness" }
+Switch S_HW_Shelf_S "Shelf" (R_HW_S, R_HW) { channel="hue::00178827902c::brightness" }
+Dimmer S_HW_Shelf_D "Shelf Dimmer" (R_HW_D, R_HW) { channel="hue::00178827902c::brightness" }
 Dimmer S_HW_Shelf_T "Shelf Temperature" (R_HW_D, R_HW) { channel="hue::00178827902c::color_temperature" }
+
+Switch S_HW_Ceiling_S "Ceiling" (R_HW_S, R_HW) { channel="hue:0210:00178827902c:20:brightness" }
+Dimmer S_HW_Ceiling_D "Ceiling Dimmer" (R_HW_D, R_HW) { channel="hue:0210:00178827902c:20:brightness" }
+
 
 Switch S_BR_Ceiling_S "Ceiling" (R_BR_S, R_BR) { channel="hue:0210:00178827902c:19:brightness" }
 Dimmer S_BR_Ceiling_D "Ceiling Dimmer" (R_BR_D, R_BR) { channel="hue:0210:00178827902c:19:brightness" }
