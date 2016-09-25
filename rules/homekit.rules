@@ -1,0 +1,142 @@
+rule "Homekit Szene Fernsehen"
+when
+  Item Homekit_Szene_Fernsehen received command ON
+then
+  R_LR_Scene.sendCommand("TV")
+end
+
+rule "Homekit Szene Essen"
+when
+  Item Homekit_Szene_Essen received command ON
+then
+  R_LR_Scene.sendCommand("Eating")
+end
+
+rule "Homekit Szene Gemütlich"
+when
+  Item Homekit_Szene_Gemuetlich received command ON
+then
+  R_LR_Scene.sendCommand("Cozy")
+end
+
+rule "Homekit Szene Gute Nacht"
+when
+  Item Homekit_Szene_Gute_Nacht received command ON
+then
+  H_Scene.sendCommand("Good Night")
+end
+
+
+
+rule "Synchronize to Homekit"
+when 
+  Time cron "* * * * * ?"
+then
+  Homekit_LR_Books_D.postUpdate((C_LR_Books_D.getState as PercentType))
+  Homekit_LR_Couch_D.postUpdate((C_LR_Couch_D.getState as PercentType))
+  Homekit_LR_DiningTable_D.postUpdate((C_LR_DiningTable_D.getState as PercentType))
+  Homekit_HW_Shelf_D.postUpdate((S_HW_Shelf_D.getState as PercentType))
+  Homekit_HW_Ceiling_D.postUpdate((S_HW_Ceiling_D.getState as PercentType))
+  Homekit_BR_Bed_D.postUpdate((C_BR_Bed_D.getState as PercentType))
+  Homekit_BR_Ceiling_D.postUpdate((S_BR_Ceiling_D.getState as PercentType))
+  Homekit_GR_Bed_D.postUpdate((C_GR_Bed_D.getState as PercentType))
+  Homekit_GR_Ceiling_D.postUpdate((S_GR_Ceiling_D.getState as PercentType))
+  
+  if (Homekit_Szene_Fernsehen.getState == ON) {
+	Homekit_Szene_Fernsehen.sendCommand(OFF)
+  }
+  if (Homekit_Szene_Essen.getState == ON) {
+	Homekit_Szene_Essen.sendCommand(OFF)
+  }
+  if (Homekit_Szene_Gemuetlich.getState == ON) {
+	Homekit_Szene_Gemuetlich.sendCommand(OFF)
+  }
+  if (Homekit_Szene_Gute_Nacht.getState == ON) {
+	Homekit_Szene_Gute_Nacht.sendCommand(OFF)
+  }
+  
+  
+  
+end
+
+
+
+rule "Homekit Homekit_LR_Books_D received command"
+when 
+  Item Homekit_LR_Books_D received command
+then
+  C_LR_Books_D.sendCommand((Homekit_LR_Books_D.getState as PercentType))
+end
+
+
+
+rule "Homekit Homekit_LR_Couch_D received command"
+when 
+  Item Homekit_LR_Couch_D received command
+then
+  C_LR_Couch_D.sendCommand((Homekit_LR_Couch_D.getState as PercentType))
+end
+
+
+rule "Homekit Homekit_LR_DiningTable_D received command"
+when 
+  Item Homekit_LR_DiningTable_D received command
+then
+  C_LR_DiningTable_D.sendCommand((Homekit_LR_DiningTable_D.getState as PercentType))
+end
+
+
+
+rule "Homekit Homekit_HW_Shelf_D received command"
+when 
+  Item Homekit_HW_Shelf_D received command
+then
+  S_HW_Shelf_D.sendCommand((Homekit_HW_Shelf_D.getState as PercentType))
+end
+
+
+
+rule "Homekit Homekit_HW_Ceiling_D received command"
+when 
+  Item Homekit_HW_Ceiling_D received command
+then
+  S_HW_Ceiling_D.sendCommand((Homekit_HW_Ceiling_D.getState as PercentType))
+end
+
+
+
+rule "Homekit Homekit_BR_Bed_D received command"
+when 
+  Item Homekit_BR_Bed_D received command
+then
+  C_BR_Bed_D.sendCommand((Homekit_BR_Bed_D.getState as PercentType))
+end
+
+
+
+
+rule "Homekit Homekit_BR_Ceiling_D received command"
+when 
+  Item Homekit_BR_Ceiling_D received command
+then
+  S_BR_Ceiling_D.sendCommand((Homekit_BR_Ceiling_D.getState as PercentType))
+end
+
+
+
+rule "Homekit Homekit_GR_Bed_D received command"
+when 
+  Item Homekit_GR_Bed_D received command
+then
+  C_GR_Bed_D.sendCommand((Homekit_GR_Bed_D.getState as PercentType))
+end
+
+
+
+
+rule "Homekit Homekit_GR_Ceiling_D received command"
+when 
+  Item Homekit_GR_Ceiling_D received command
+then
+  S_GR_Ceiling_D.sendCommand((Homekit_GR_Ceiling_D.getState as PercentType))
+end

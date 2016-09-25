@@ -1,0 +1,5 @@
+Group G_Network "Network"
+Group G_NetworkNotify "Network with Alarm"
+
+Contact S_Net_FritzBox_S "FritzBox [%s]" (G_Network, G_NetworkNotify) { channel="network:device:fritzbox:online" }
+Contact S_Net_Localhost_S "Localhost [%s]" (G_Network, G_NetworkNotify) { channel="network:device:localhost:online" }

@@ -1,107 +1,112 @@
 sitemap default label="Main Menu" {
-    Frame {
-       Switch item=H_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"] 
-       Switch item=H_Scene label="Scene" mappings=["Cozy"="Cozy"]
-    }
-    Frame {
-        Text label="Livingroom" icon="sofa" {
-            Frame {
-				Switch item=R_LR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"] 
-				Switch item=R_LR_Scene label="Scene" mappings=["TV"="TV", "Eating"="Eating", "Cozy"="Cozy"] 
-            }
-            Frame {
-                Switch item=C_LR_Couch_S
-                Slider item=C_LR_Couch_D label="- Dimmer" visibility=[C_LR_Couch_S==ON]
-                Slider item=C_LR_Couch_T label="- Color" visibility=[C_LR_Couch_S==ON]
-                
-                Switch item=C_LR_Books_S
-                Slider item=C_LR_Books_D label="- Dimmer" visibility=[C_LR_Books_S==ON]
-                Slider item=C_LR_Books_T label="- Color" visibility=[C_LR_Books_S==ON]
-                
-                Switch item=C_LR_DiningTable_S 
-                Slider item=C_LR_DiningTable_D label="- Dimmer" visibility=[C_LR_DiningTable_S==ON]
-            }
-        }
-        Text label="Bedroom" icon="bedroom_blue" {
-            Frame {
-                Switch item=R_BR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"] 
-                Switch item=R_BR_Scene label="Scene" mappings=["Reading"="Reading", "Cozy"="Cozy"] 
-            }
-            Frame {
-                Switch item=C_BR_Bed_S
-                Slider item=C_BR_Bed_D label="- Dimmer" visibility=[C_BR_Bed_S==ON]
-                Colorpicker item=C_BR_Bed_C label="- Color" visibility=[C_BR_Bed_S==ON]
+  Frame {
+    Switch item=H_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"]
+    Switch item=H_Scene label="Scene" mappings=["Cozy"="Cozy", "Good Night=Good Night"]
+  }
+  Frame {
+    Text label="Livingroom" icon="sofa" {
+      Frame {
+        Switch item=R_LR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"]
+        Switch item=R_LR_Scene label="Scene" mappings=["TV"="TV", "Eating"="Eating", "Cozy"="Cozy"]
+      }
+      Frame {
+        Switch item=C_LR_Couch_S
+        Slider item=C_LR_Couch_D label="- Dimmer" visibility=[C_LR_Couch_S==ON]
+        Slider item=C_LR_Couch_T label="- Color" visibility=[C_LR_Couch_S==ON]
 
-                Switch item=S_BR_Ceiling_S
-                Slider item=S_BR_Ceiling_D label="- Dimmer" visibility=[S_BR_Ceiling_S==ON]
-                Slider item=S_BR_Ceiling_T label="- Color" visibility=[S_BR_Ceiling_S==ON]
-            }
-        }
-        Text label="Guestroom" icon="bedroom_red" {
-            Frame {
-                Switch item=R_GR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"] 
-                Switch item=R_GR_Scene label="Scene" mappings=["Reading"="Reading", "Cozy"="Cozy"] 
-            }
-            Frame {
-                Switch item=C_GR_Bed_S
-                Slider item=C_GR_Bed_D label="- Dimmer" visibility=[C_GR_Bed_S==ON]
-                Slider item=C_GR_Bed_T label="- Color" visibility=[C_GR_Bed_S==ON]
-                
-                Switch item=S_GR_Ceiling_S
-                Slider item=S_GR_Ceiling_D label="- Dimmer" visibility=[S_GR_Ceiling_S==ON]
-            }
-        }
-        Text label="Hallway" icon="corridor" {
-            Frame {
-                Switch item=R_GR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"] 
-                Switch item=R_GR_Scene label="Scene" mappings=["Night"="Night"] 
-            }
-            Frame {
-                Switch item=S_HW_Shelf_S
-                Slider item=S_HW_Shelf_D label="- Dimmer" visibility=[S_HW_Shelf_S==ON]
-                Slider item=S_HW_Shelf_T label="- Color" visibility=[S_HW_Shelf_S==ON]
-                
-                Switch item=S_HW_Ceiling_S
-                Slider item=S_HW_Ceiling_D label="- Dimmer" visibility=[S_HW_Ceiling_S==ON]
-            }
-        }
+        Switch item=C_LR_Books_S
+        Slider item=C_LR_Books_D label="- Dimmer" visibility=[C_LR_Books_S==ON]
+        Slider item=C_LR_Books_T label="- Color" visibility=[C_LR_Books_S==ON]
+
+        Switch item=C_LR_DiningTable_S
+        Slider item=C_LR_DiningTable_D label="- Dimmer" visibility=[C_LR_DiningTable_S==ON]
+      }
+	  Frame {
+		Text item=Homekit_LR_Books_D
+	  }
     }
-    Frame {
-        Text label="System" icon="incline" {
-            Frame {
-                Text label="Presence" icon="parents_3_2" {
-                    Frame {
-                        Switch item=G_PresenceAll_S
-                    }
-                    Frame {
-                        Switch item=G_PresenceAndreas_S
-                        Switch item=G_PresenceStefanie_S
-                        Switch item=G_PresenceSomeone_S
-                    }
-                    Frame {
-                        Switch item=S_PresenceGeoAndreas_S
-                        Switch item=S_PresenceMobileAndreas_S
-                        Switch item=S_PresenceGeoStefanie_S
-                        Switch item=S_PresenceMobileStefanie_S
-                    }
-                }
-                Text label="Astro" icon="clock" {
-                    Frame {
-					 
-					
-						Switch item=Test
-						Switch item=Time_Day_S
-						Switch item=Time_Night_S
-                        Text item=Time_Sunrise
-						Text item=Time_Sunset
-						Text item=Time_SunriseLampsOff
-						Text item=Time_SunsetLampsOn
-						Text item=Time_TimeOfDay
-                    }
-                }
-		Group item=H_Lamps
-                Switch item=S_updateConfiguration_S icon="incline" mappings=[ON="Start"]
-            }
-        }
+    Text label="Bedroom" icon="bedroom_blue" {
+      Frame {
+        Switch item=R_BR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"]
+        Switch item=R_BR_Scene label="Scene" mappings=["Reading"="Reading", "Cozy"="Cozy"]
+      }
+      Frame {
+        Switch item=C_BR_Bed_S
+        Slider item=C_BR_Bed_D label="- Dimmer" visibility=[C_BR_Bed_S==ON]
+        Colorpicker item=C_BR_Bed_C label="- Color" visibility=[C_BR_Bed_S==ON]
+
+        Switch item=S_BR_Ceiling_S
+        Slider item=S_BR_Ceiling_D label="- Dimmer" visibility=[S_BR_Ceiling_S==ON]
+        Slider item=S_BR_Ceiling_T label="- Color" visibility=[S_BR_Ceiling_S==ON]
+      }
     }
+    Text label="Guestroom" icon="bedroom_red" {
+      Frame {
+        Switch item=R_GR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"]
+        Switch item=R_GR_Scene label="Scene" mappings=["Reading"="Reading", "Cozy"="Cozy"]
+      }
+      Frame {
+        Switch item=C_GR_Bed_S
+        Slider item=C_GR_Bed_D label="- Dimmer" visibility=[C_GR_Bed_S==ON]
+        Slider item=C_GR_Bed_T label="- Color" visibility=[C_GR_Bed_S==ON]
+
+        Switch item=S_GR_Ceiling_S
+        Slider item=S_GR_Ceiling_D label="- Dimmer" visibility=[S_GR_Ceiling_S==ON]
+      }
+    }
+    Text label="Hallway" icon="corridor" {
+      Frame {
+        Switch item=R_GR_Scene icon="light" label="All Lamps" mappings=["On"="On", "Off"="Off"]
+        Switch item=R_GR_Scene label="Scene" mappings=["Night"="Night"]
+      }
+      Frame {
+        Switch item=S_HW_Shelf_S
+        Slider item=S_HW_Shelf_D label="- Dimmer" visibility=[S_HW_Shelf_S==ON]
+        Slider item=S_HW_Shelf_T label="- Color" visibility=[S_HW_Shelf_S==ON]
+
+        Switch item=S_HW_Ceiling_S
+        Slider item=S_HW_Ceiling_D label="- Dimmer" visibility=[S_HW_Ceiling_S==ON]
+      }
+    }
+  }
+  Frame {
+    Text label="System" icon="incline" {
+      Text label="Information" icon="information" {
+          Text label="Astro" icon="clock" {
+          Frame {
+            Text item=Time_TimeOfDay
+            Switch item=Time_Day_S
+            Switch item=Time_Night_S
+          }
+          Frame {
+            Text item=Time_SunriseLampsOff
+            Text item=Time_SunsetLampsOn
+          }
+          Frame{
+            Text item=Time_Sunrise
+            Text item=Time_Sunset
+          }
+        }
+        Text label="Presence" icon="parents_3_2" {
+          Frame {
+            Switch item=G_PresenceAll_S
+          }
+          Frame {
+            Switch item=G_PresenceAndreas_S
+            Switch item=G_PresenceStefanie_S
+            Switch item=G_PresenceSomeone_S
+          }
+          Frame {
+            Switch item=S_PresenceGeoAndreas_S
+            Switch item=S_PresenceMobileAndreas_S
+            Switch item=S_PresenceGeoStefanie_S
+            Switch item=S_PresenceMobileStefanie_S
+          }
+        }
+		Group item=G_Network
+      }
+      Group item=H_Lamps
+      Switch item=S_updateConfiguration_S icon="incline" mappings=[ON="Start"]
+    }
+  }
 }

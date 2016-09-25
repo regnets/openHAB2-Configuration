@@ -7,6 +7,12 @@ then
   if (H_Scene.state == "Coming Home") {
     H_Scene.sendCommand("On")
     createTimer(now.plusMinutes(15)) [| H_Scene.sendCommand("Cozy") ]
+  } else if (H_Scene.state == "Good Night") {
+	R_LR_Scene.sendCommand("Off")
+    R_GR_Scene.sendCommand("Off")
+    R_HW_Scene.sendCommand("Off")
+    C_BR_Bed_S.sendCommand(ON)
+	S_BR_Ceiling_S.sendCommand(OFF)
   } else {
     R_LR_Scene.sendCommand(H_Scene.state.toString())
     R_GR_Scene.sendCommand(H_Scene.state.toString())
@@ -28,10 +34,19 @@ then
     R_LR_D.sendCommand(new PercentType(100))
     R_LR_T.sendCommand(new PercentType(60))
   } else if (R_LR_Scene.state == "Cozy") {
+    C_LR_Books_D.sendCommand(new PercentType(25))
+    C_LR_Couch_D.sendCommand(new PercentType(25))
+    C_LR_DiningTable_D.sendCommand(new PercentType(25))
+  } else if (R_LR_Scene.state == "TV") {
     C_LR_Books_S.sendCommand(OFF)
     C_LR_Couch_S.sendCommand(ON)
     C_LR_Couch_D.sendCommand(new PercentType(60))
     C_LR_DiningTable_S.sendCommand(OFF)
+  } else if (R_LR_Scene.state == "Eating") {
+    C_LR_Books_S.sendCommand(OFF)
+    C_LR_Couch_S.sendCommand(OFF)
+    C_LR_DiningTable_S.sendCommand(ON)
+	C_LR_DiningTable_D.sendCommand(new PercentType(85))
   }
 end
 
@@ -39,7 +54,7 @@ end
 
 rule "Hallway Scenes"
 when 
-  Item R_HW_Scene received Command
+  Item R_HW_Scene received command
 then 
   if (R_HW_Scene.state == "Off") {
     R_HW_S.sendCommand(OFF)
@@ -57,7 +72,7 @@ end
 
 rule "Guestroom Scenes"
 when 
-  Item R_GR_Scene received Command
+  Item R_GR_Scene received command
 then 
   if (R_GR_Scene.state == "Off") {
     R_GR_S.sendCommand(OFF)
@@ -75,7 +90,7 @@ end
 
 rule "Bedroom Scenes"
 when 
-  Item R_BR_Scene received Command
+  Item R_BR_Scene received command
 then
   if (R_BR_Scene.state == "Off") {
     R_BR_S.sendCommand(OFF)

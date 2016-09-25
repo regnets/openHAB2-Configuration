@@ -1,0 +1,2 @@
+network:device:fritzbox [ hostname="fritz.box" port="0", retry="1", timeout="5000", refresh_interval="60000", use_system_ping="false", dhcplisten="true" ]
+network:device:localhost [ hostname="localhost" port="0", retry="1", timeout="5000", refresh_interval="60000", use_system_ping="false", dhcplisten="true" ]

@@ -1,1 +1,0 @@
-# openHAB2-Configuration
